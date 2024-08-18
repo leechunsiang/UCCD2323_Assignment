@@ -1,0 +1,512 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fancy Drinks</title>
+    <link rel="stylesheet" href="styledr.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="../logo_header/logo_white.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Fancy Drinks</h1>
+        <nav>
+            <a href="../Main/main.html">Home</a>
+
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h2>Discover Your New Favorite Drink</h2>
+            <p>Explore our collection of refreshing and unique beverages</p>
+        </section>
+        <section>
+            <div class="carousel">
+                <div class="arrow left" onclick="prevDrink()">&#9664;</div>
+                <div class="drink-container">
+                    <div class="drink" id="drink1">
+                        <img src="drimg/dirty.png" alt="Dirty Shirley" class="drink-image">
+                        <div class="drink-description">
+                            <h3>Dirty Shirley</h3>
+                            <p>
+                                Bright and colorful, sweet with just a hint of booze, the Dirty Shirley quickly became THE drink of summer 2022, thanks in part to its popularity on TikTok. It's a boozy version of the classic Shirley Temple so many of us grew up with—and let's be honest, what too-sweet mocktail can't be improved with a shot of vodka ?
+                            </p>
+                            <p><a href="#" onclick="showPopup('Dirty Shirley')">Get the Dirty Shirley recipe.</a></p>
+                        </div>
+                    </div>
+                    <div class="drink" id="drink2">
+                        <img src="drimg/milo.png" alt="Milo Dinosaur" class="drink-image">
+                        <div class="drink-description">
+                            <h3>Milo Dinosaur</h3>
+                            <p>Popular Chocolate Malt drink and a most recognized brand was introduced in Malaysia in the early 1950s.</p>
+                            <p><a href="#" onclick="showPopup('Milo Dinosaur')">Get the Milo Dinosaur recipe.</a></p>
+                        </div>
+                    </div>
+                    <div class="drink" id="drink3">
+                        <img src="drimg/peach.png" alt="Peach Sparkling Water" class="drink-image">
+                        <div class="drink-description">
+                            <h3>Peach Sparkling Water</h3>
+                            <p>Imagine sipping peach sparkling water on a warm summer day—the effervescent bubbles dance across your tongue, while the natural peach flavor refreshes like a gentle breeze.</p>
+                            <p><a href="#" onclick="showPopup('Peach Sparking Water')">Get the summer recipe now.</a></p>
+                        </div>
+                    </div>
+                    <div class="drink" id="drink4">
+                        <img src="drimg/dalgona.png" alt="Dalgona Coffee" class="drink-image">
+                        <div class="drink-description">
+                            <h3>Dalgona Coffee</h3>
+                            <p>If you are a coffee lover, You defenely love it which is easy to made and taste same as luxury coffee shop.</p>
+                            <p><a href="#" onclick="showPopup('Dalgona Coffee')">Get the Dalgona Coffee recipe.</a></p>
+                        </div>
+                    </div>
+                    <div class="drink" id="drink5">
+                        <img src="drimg/jasmine.png" alt="Jasmine Green Milk Tea" class="drink-image">
+                        <div class="drink-description">
+                            <h3>Jasmine Green Milk Tea</h3>
+                            <p>Get a "weight loss and improved blood sugar control, as well as heart and oral health" drink ?</p>
+                            <p><a href="#" onclick="showPopup('Jasmine Green Milk Tea')">Get the Jasmine Green Milk Tea recipe.</a></p>
+                        </div>
+                    </div>
+                    <div class="drink" id="drink6">
+                        <img src="drimg/fruit.png" alt="Fruit Tea" class="drink-image">
+                        <div class="drink-description">
+                            <h3>Fruit Tea</h3>
+                            <p>A family drink or gathering drink that is refreshing and hydrating drinks </p>
+                            <p><a href="#" onclick="showPopup('Fruit Tea')">Get the REFRESHING recipe.</a></p>
+                        </div>
+                    </div>
+                    <div class="drink" id="drink7">
+                        <img src="drimg/grape.png" alt="Grape Oolong Tea" class="drink-image">
+                        <div class="drink-description">
+                            <h3>Grape Oolong Tea</h3>
+                            <p>0 calories 0 fat drink that drink without worries</p>
+                            <p><a href="#" onclick="showPopup('Grape Oolong Tea')">Get the Grape Oolong Tea recipe.</a></p>
+                        </div>
+                    </div>
+                    <div class="drink" id="drink8">
+                        <img src="drimg/mojito.png" alt="Mojito" class="drink-image">
+                        <div class="drink-description">
+                            <h3>Mojito</h3>
+                            <p>Do you want have a drink at home with Jay Chou?.</p>
+                            <p><a href="#" onclick="showPopup('Mojito')">Get the Meet Jay Chou recipe.</a></p>
+                        </div>
+                    </div>
+                    <div class="drink" id="drink9">
+                        <img src="drimg/coconut.png" alt="Melaka Coconut Shake" class="drink-image">
+                        <div class="drink-description">
+                            <h3>Melaka Coconut Shake</h3>
+                            <p>Do you miss the taste of Melaka Coconut Shake? Let get the same drink that made by "Abang" at home.</p>
+                            <p><a href="#" onclick="showPopup('Melaka Coconut Shake')">Get the Shake recipe.</a></p>
+                        </div>
+                    </div>
+                    <div class="drink" id="drink10">
+                        <img src="drimg/rice.png" alt="Purple Rice Yogurt" class="drink-image">
+                        <div class="drink-description">
+                            <h3>Purple Rice Yogurt</h3>
+                            <p>Purple rice has a long history in traditional Asian cuisine, specifically in China, where it was considered a rare luxury reserved for royalty.</p>
+                            <p><a href="#" onclick="showPopup('Purple Rice Yogurt')">Get the Purple Rice Drink recipe.</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="arrow right" onclick="nextDrink()">&#9654;</div>
+            </div>
+            <div class="counter">
+                Recipe <span id="current-recipe">1</span> of 10
+            </div>
+        </section>
+        <section class="additional-info">
+            <h2>More About Drinks</h2>
+            <div class="drink-qa">
+                <h3>Common Questions about Drinks</h3>
+                <div class="qa-item">
+                    <h4>Q: What's the difference between coffee and espresso?</h4>
+                    <p>A: Coffee is typically brewed by passing hot water through ground coffee beans, while espresso is made by forcing a small amount of nearly boiling water through finely-ground coffee beans. Espresso is more concentrated and has a layer of crema on top.</p>
+                </div>
+                <div class="qa-item">
+                    <h4>Q: What are the health benefits of green tea?</h4>
+                    <p>A: Green tea is rich in antioxidants called catechins, which may help prevent cell damage, reduce inflammation, and even fight certain types of cancer. It may also boost metabolism and improve brain function.</p>
+                </div>
+                <div class="qa-item">
+                    <h4>Q: What makes a cocktail a "sour"?</h4>
+                    <p>A: A sour cocktail typically consists of a base liquor, lemon or lime juice, and a sweetener. Classic examples include the Whiskey Sour and Margarita.</p>
+                </div>
+            </div>
+            <div class="drink-types">
+                <h3>Types of Coffee in Malaysia</h3>
+                <ul>
+                    <li><strong>Kopi:</strong> Black coffee with condensed milk.</li>
+                    <li><strong>Kopi C:</strong> Coffee with evaporated milk and sugar.</li>
+                    <li><strong>Kopi C Kosong:</strong> Coffee with evaporated milk, no sugar.</li>
+                    <li><strong>Kopi O:</strong> Black coffee with sugar.</li>
+                    <li><strong>Kopi O Kosong:</strong> Black coffee without sugar.</li>
+                </ul>
+            </div>
+            <div class="drink-facts">
+                <h3>Interesting Drink Facts</h3>
+                <ul>
+                    <li>The world's most expensive coffee, Kopi Luwak, comes from coffee beans eaten and partially digested by the Asian palm civet.</li>
+                    <li>Bubble tea, also known as boba tea, originated in Taiwan in the 1980s.</li>
+                    <li>The oldest known alcoholic beverage is a 9,000-year-old Chinese concoction made from rice, honey, and fruit.</li>
+                </ul>
+            </div>
+        </section>
+        <section class="drink-facts">
+            <h2>Fun Drink Facts</h2>
+            <div class="fact-container">
+                <div class="fact">
+                    <i class="fas fa-coffee"></i>
+                    <p>Coffee is the second most traded commodity in the world, after oil.</p>
+                </div>
+                <div class="fact">
+                    <i class="fas fa-leaf"></i>
+                    <p>Tea was discovered in 2737 BC by Chinese Emperor Shen-Nung.</p>
+                </div>
+                <div class="fact">
+                    <i class="fas fa-glass-martini-alt"></i>
+                    <p>The world's most expensive cocktail costs $22,600.</p>
+                </div>
+            </div>
+        </section>
+        <section id="about" class="about-section">
+            <h2>About Us</h2>
+            <p>We are passionate about bringing you the most delicious and unique drink recipes from around the world. Our team of expert mixologists and food scientists work tirelessly to create and curate the perfect beverages for every occasion.</p>
+        </section>
+        <section id="contact" class="contact-section">
+            <h2>Tell us what recipe you preferred</h2>
+            <form id="preferenceForm">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <textarea id="message" name="message" placeholder="Briefly tell us why you love it?" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="hidePopup()">&times;</span>
+            <h3 id="popup-title"></h3>
+            <p id="popup-description"></p>
+            <h4>Ingredients</h4>
+            <ul id="popup-ingredients"></ul>
+            <h4>Steps</h4>
+            <ol id="popup-steps"></ol>
+            <h4>Way to Store</h4>
+            <p id="popup-storage"></p>
+            <h4>Serving Size</h4>
+            <p id="popup-serving"></p>
+        </div>
+    </div>
+    <script>
+        let currentDrink = 0;
+        const drinks = [
+            {
+                name: "Dirty Shirley",
+                description: "Bright and colorful, sweet with just a hint of booze, the Dirty Shirley quickly became THE drink of summer 2022, thanks in part to its popularity on TikTok.",
+                ingredients: ["1 oz vodka", "5 oz lemon-lime soda", "Dash of grenadine", "Maraschino cherry for garnish"],
+                steps: ["Fill a glass with ice.", "Add vodka and lemon-lime soda.", "Top with grenadine and stir gently.", "Garnish with a cherry."],
+                storage: "Best served fresh.",
+                serving: "Serves 1."
+            },
+            {
+                name: "Milo Dinosaur",
+                description: "A beloved Malaysian treat, the Milo Dinosaur is a rich, chocolatey malt drink topped with a generous heap of Milo powder. This indulgent beverage offers a perfect balance of creamy and crunchy textures, making it a favorite among both kids and adults.",
+                ingredients: ["Nestle Milo Powder", "Full Cream Milk","Condensed Milk","Ice Cubes"],
+                steps: ["Warm half the milk to boiling point in the microwave or a small saucepan on the stovetop.", "Add the Milo to the warm milk and stir until fully dissolved.","Add the remaining cold milk to the Milo and mix again.","Next, add your desired amount of condensed milk and give it a good mix to dissolve it into the Milo.","Fill the glass to the top with ice cubes. You can use either whole or crushed ice.","Pour in the Milo mixture and scoop a generous heap of Milo powder on top."],
+                storage: "Served within 30 minute",
+                serving: "Serves 1."
+            },
+            {
+                name: "Peach Sparking Water",
+                description: "Refreshing and light, this Peach Sparkling Water is the perfect summer cooler. The natural sweetness of peaches combines with the effervescence of sparkling water to create a zero-calorie, fruit-infused drink that's both delicious and hydrating.",
+                ingredients: ["Peach ", "Sparkling water","2 slide lemon","2-3 Mint leaf"],
+                steps: ["Put pitted cherries in a cup and mash them to extract juice.", "Add ice cubes and lemon slices inside", "Pour in soda water", "Add a mint leaf for garnish and you are done~"],
+                storage: "Storage inside refrigerator (consume within 2 days)",
+                serving: "Serves 2."
+            },
+            {
+                name: "Dalgona Coffee",
+                description: "This Instagram-famous drink took the world by storm during lockdowns. Dalgona Coffee features a creamy, whipped coffee topping over cold milk, creating a visually stunning and delicious beverage that rivals any luxury coffee shop offering.",
+                ingredients: ["2 tablespoon instant coffee","2 tablespoon granulated sugar","2 tablespoon hot water","Ice cubes for serving","Milk for serving"],
+                steps: ["Combine instant coffee, sugar and water in a bowl", "Mix till it thickens and is foamy with either a whisk or a hand mixer.","It will take 8 to 12 minutes for the mixture to form stiff peaks with a whisk.","It will take 2 to 4 minutes on high speed to form stiff peaks with a hand mixer.","Add your preferred amount of ice cubes into the drinking glass and pour in the milk.","Scoop out the whipped coffee and place it on the milk with a spoon.","Mix before drinking if desired."],
+                storage: "Comsume within 30 minute for best taste.",
+                serving: "Serves 1"
+            },
+            {
+                name: "Jasmine Green Milk Tea",
+                description: "A fragrant and soothing beverage, Jasmine Green Milk Tea combines the delicate floral notes of jasmine with the earthy undertones of green tea. This healthful drink offers potential benefits like improved blood sugar control and heart health, all while delighting your taste buds.",
+                ingredients: ["MK Jasmine Green Tea Drink 500ml", "Full Cream Milk","Sugar syrup(amount depend on individual)"],
+                steps: ["Pour the Jasmine Green Tea and Milk into a cup", "Mixed them together and add sugar that your want and ready to serve."],
+                storage: "Within 3 days.",
+                serving: "Serves 2-3."
+            },
+            {
+                name: "Fruit Tea",
+                description: "A colorful medley of fresh fruits infused in fragrant tea, this Fruit Tea is a crowd-pleaser at any gathering. Bursting with vitamins and antioxidants, it's a refreshing and healthy alternative to sugary drinks, perfect for hot summer days or as a festive non-alcoholic option.",
+                ingredients: ["400 gram Mango", "6 passion fruit","2 orange","1 lemon", "6 tangerine", "1/2 watermellon","1.5L Jasmine tea", "Honey", "Ice cubes"],
+                steps: ["Cut the mango into pieces and chop it, add passion fruit seeds.", "Slice oranges and lemons, cut tangerines in half, and cut watermelon into pieces.", "Add honey, tangerine juice, ice cubes, and jasmine tea to a big bowl."],
+                storage: "Storage into refrigerator (consume within 7 days).",
+                serving: "Serves 6."
+            },
+            {
+                name: "Grape Oolong Tea",
+                description: "A sophisticated blend of juicy grapes and premium oolong tea, this zero-calorie beverage offers a unique flavor profile. The natural sweetness of grapes complements the complex, slightly earthy notes of oolong, resulting in a refined and guilt-free refreshment.",
+                ingredients: ["Oolong tea bag", "Grapes", "Warm water", "Ice cubes", ],
+                steps: ["Soak the oolong tea bag in warm water (about 5 minutes)","Peel the grapes and squeeze them into the bottle","Add ice cubes to the bottle and pour the tea into the bottle"],
+                storage: "Consume within the day.",
+                serving: "Serves 1."
+            },
+            {
+                name: "Mojito",
+                description: "A classic Cuban highball, the Mojito is a perfect balance of sweetness, citrus, and herbaceous mint flavors. This refreshing cocktail, famously enjoyed by Ernest Hemingway, combines white rum, lime juice, mint, and soda water for a taste of tropical paradise.",
+                ingredients: ["5 Fresh mint", "White Rum","Fresh Lime Juice","Simple Syrup", "Club soda OR Sparkling water", "Ice cubes"],
+                steps: ["Muddle the mint", "Shake it after add the rum, lime juice, simple syrup, and ice", "Add lime slices and adjust the taste you prefer."],
+                storage: "Consume within 3 days.",
+                serving: "Serves 2."
+            },
+            {
+                name: "Melaka Coconut Shake",
+                description: "A beloved Malaysian treat, the Melaka Coconut Shake is a creamy, indulgent beverage that perfectly captures the tropical essence of Southeast Asia. This rich shake combines fresh coconut flesh, coconut water, and a generous scoop of ice cream for a luxurious drinking experience.",
+                ingredients: ["Fresh Coconut", "Condensed Milk","Nestle Vanila Ice Cream", "Ice cubes"],
+                steps: ["Pour the coconut water into a bowl","Take out the pulp","Pour the pulp, ice cream, ice cubes, coconut water, and condensed milk into a blender","Blend evenly, pour into a cup and add a scop of ice cream to enjoyl"],
+                storage: "Consume it within 30 minute.",
+                serving: "Serves 1."
+            },
+            {
+                name: "Purple Rice Yogurt",
+                description: "A unique fusion of Asian and Western flavors, Purple Rice Yogurt offers a delightful mix of textures and tastes. The nutty, slightly chewy purple rice pairs beautifully with creamy yogurt, creating a filling and nutritious drink that's both a treat and a health food.",
+                ingredients: ["Purple rice (1 cup)","Unsweetened thick yogurt (6 tablespoons)","Milk powder (3 tablespoons)","Ice (1 cup)", "Ingredient 2"],
+                steps: ["Soak the washed purple rice for 3-4 hours until it is soft.","Drain the soaked purple rice and pour it into the pot, then pour boiling water into the pot until the waste water covers the purple rice.",
+                        "Boil over high heat until boiling, then turn to low heat and cook until thick. It is important to keep stirring here, otherwise the purple rice will burn on one side!","Add 6 tablespoons of unsweetened thick yogurt. Friends who can't find it can also use Greek yoghurt instead, which will taste thicker!",
+                        "Then add milk powder to the blender and mix it with unsweetened thick yogurt. ","After stirring evenly, add three tablespoons of purple rice to the yogurt and continue stirring.",
+                        "When all the ingredients are stirred evenly, add ice cubes and stir into a smoothie.","Add the reserved purple rice at the bottom of the cup, and then pour in the stirred yogurt, and a cup of purple rice yogurt with a lot of ingredients is ready!"],
+                storage: "Consume within 30 minute",
+                serving: "Serves 1."
+            }
+        ];
+
+        function showPopup(drinkName) {
+        const drink = drinks.find(d => d.name === drinkName);
+        document.getElementById("popup-title").innerText = drink.name;
+        document.getElementById("popup-description").innerText = drink.description;
+        document.getElementById("popup-ingredients").innerHTML = drink.ingredients.map(i => `<li>${i}</li>`).join('');
+        document.getElementById("popup-steps").innerHTML = drink.steps.map(s => `<li>${s}</li>`).join('');
+        document.getElementById("popup-storage").innerText = drink.storage;
+        document.getElementById("popup-serving").innerText = drink.serving;
+        document.getElementById("popup").style.display = "block";
+    }
+
+    function setCookie(name, value, days) {
+        let expires = "";
+        if (days) {
+            let date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    // Get a cookie by name
+    function getCookie(name) {
+        let nameEQ = name + "=";
+        let ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    // Delete a cookie
+    function eraseCookie(name) {
+        document.cookie = name + '=; Max-Age=-99999999;';
+    }
+
+    // Example usage
+    function saveCurrentDrink() {
+        setCookie('currentDrink', currentDrink, 7); // Save current drink index for 7 days
+    }
+
+    function loadCurrentDrink() {
+        const savedDrink = getCookie('currentDrink');
+        if (savedDrink) {
+            currentDrink = parseInt(savedDrink, 10);
+            updateCarousel();
+        }
+    }
+
+    // Load saved drink when page loads
+    window.onload = function() {
+        loadCurrentDrink();
+        // Initialize the carousel
+        updateCarousel();
+    }
+
+    // Save the current drink index before exiting
+    window.onbeforeunload = function() {
+        saveCurrentDrink();
+    }
+
+    function hidePopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+    function nextDrink() {
+        currentDrink = (currentDrink + 1) % drinks.length;
+        updateCarousel();
+    }
+
+    function prevDrink() {
+        currentDrink = (currentDrink - 1 + drinks.length) % drinks.length;
+        updateCarousel();
+    }
+
+    function updateCarousel() {
+        const container = document.querySelector('.drink-container');
+        container.style.transform = `translateX(-${currentDrink * 100}%)`;
+        document.getElementById('current-recipe').innerText = currentDrink + 1;
+    }
+
+
+        // Initialize the carousel
+        updateCarousel();z
+    </script>
+    <script>
+    // Save user preference
+    function saveUserPreference(preference, value) {
+        setCookie(preference, value, 30); // Save preference for 30 days
+    }
+
+    // Load user preference
+    function loadUserPreference(preference) {
+        return getCookie(preference);
+    }
+
+    // Example: Change theme based on user preference
+    function applyUserPreferences() {
+        const theme = loadUserPreference('theme');
+        if (theme) {
+            document.body.className = theme; // Assuming theme is a class name
+        }
+    }
+
+    // Example usage for setting and applying theme
+    function setTheme(theme) {
+        saveUserPreference('theme', theme);
+        applyUserPreferences();
+    }
+
+    // Initialize preferences on page load
+    window.onload = function() {
+        loadCurrentDrink();
+        applyUserPreferences();
+    }
+
+
+    // Save user preference
+    function saveUserPreference(preference, value) {
+        setCookie(preference, value, 30); // Save preference for 30 days
+    }
+
+    // Load user preference
+    function loadUserPreference(preference) {
+        return getCookie(preference);
+    }
+
+    // Example: Change theme based on user preference
+    function applyUserPreferences() {
+        const theme = loadUserPreference('theme');
+        if (theme) {
+            document.body.className = theme; // Assuming theme is a class name
+        }
+    }
+
+    // Example usage for setting and applying theme
+    function setTheme(theme) {
+        saveUserPreference('theme', theme);
+        applyUserPreferences();
+    }
+
+    // Initialize preferences on page load
+    window.onload = function() {
+        loadCurrentDrink();
+        applyUserPreferences();
+    }
+
+    function incrementVisitCount() {
+        let visitCount = parseInt(getCookie('visitCount')) || 0;
+        visitCount++;
+        setCookie('visitCount', visitCount, 30); // Save for 30 days
+        return visitCount;
+    }
+
+    // Display visit count
+    function showVisitCount() {
+        const count = incrementVisitCount();
+        if (count > 1) {
+            alert(`You have visited this page ${count} times.`);
+        }
+    }
+
+    // Show visit count when the page loads
+    window.onload = function() {
+        loadCurrentDrink();
+        applyUserPreferences();
+        showVisitCount();
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const preferenceForm = document.getElementById('preferenceForm');
+    
+    // Load saved form data
+    loadFormData();
+
+    // Handle form submission
+    preferenceForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        saveFormData();
+        alert('Thank you for sharing your preference!');
+        preferenceForm.reset();
+        });
+    });
+
+    function saveFormData() {
+        const name = document.querySelector('input[name="name"]').value;
+        const email = document.querySelector('input[name="email"]').value;
+        const message = document.querySelector('textarea[name="message"]').value;
+
+        setCookie('formName', name, 30);
+        setCookie('formEmail', email, 30);
+        setCookie('formMessage', message, 30);
+    }
+
+    // Load form data
+    function loadFormData() {
+        document.querySelector('input[name="name"]').value = getCookie('formName') || '';
+        document.querySelector('input[name="email"]').value = getCookie('formEmail') || '';
+        document.querySelector('textarea[name="message"]').value = getCookie('formMessage') || '';
+    }
+
+    // Handle form submission
+    document.querySelector('form').onsubmit = function() {
+        saveFormData();
+        // Optionally prevent form submission for demonstration
+        // return false;
+    }
+
+    // Load form data when the page loads
+    window.onload = function() {
+        loadCurrentDrink();
+        applyUserPreferences();
+        showVisitCount();
+        loadFormData();
+    }
+
+
+
+</script>
+
+
+</body>
+</html>

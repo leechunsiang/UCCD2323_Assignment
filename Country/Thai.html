@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thai Cuisine</title>
+    <link rel="stylesheet" href="styleth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../logo_header/logo_white.png" type="image/x-icon">
+    <script>
+        function showRecipe(recipe) {
+            const recipes = {
+                padthai: {
+                    title: 'ผัดไทย (Pad Thai)',
+                    img: 'thimg/padthai.png',
+                    description: 'Stir-fried rice noodles with shrimp, tofu, peanuts, and bean sprouts.',
+                    ingredients: `
+                        <ul>
+                            <li>200g rice noodles</li>
+                            <li>200g shrimp, peeled and deveined</li>
+                            <li>100g firm tofu, cubed</li>
+                            <li>2 eggs</li>
+                            <li>1 cup bean sprouts</li>
+                            <li>1/4 cup roasted peanuts, crushed</li>
+                            <li>2 tbsp vegetable oil</li>
+                            <li>2 tbsp tamarind paste</li>
+                            <li>2 tbsp fish sauce</li>
+                            <li>1 tbsp palm sugar</li>
+                            <li>2 cloves garlic, minced</li>
+                            <li>2 shallots, sliced</li>
+                            <li>Lime wedges for serving</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Soak rice noodles in warm water for 30 minutes, then drain</li>
+                            <li>Mix tamarind paste, fish sauce, and palm sugar in a small bowl</li>
+                            <li>Heat oil in a wok over medium-high heat</li>
+                            <li>Stir-fry garlic and shallots until fragrant</li>
+                            <li>Add shrimp and tofu, cook until shrimp turns pink</li>
+                            <li>Push ingredients to one side, crack eggs into the wok and scramble</li>
+                            <li>Add noodles and sauce mixture, stir-fry until noodles are soft</li>
+                            <li>Add bean sprouts and half the peanuts, toss to combine</li>
+                            <li>Serve hot, garnished with remaining peanuts and lime wedges</li>
+                        </ol>`,
+                    time: 'Preparation Time: 40 minutes<br>Cooking Time: 15 minutes',
+                    servingSize: 'Serves 2',
+                    nutrition: 'Calories: 550 per serving<br>Protein: 25g<br>Carbs: 70g<br>Fat: 20g',
+                    tips: 'Don\'t overcook the noodles. They should be slightly al dente as they\'ll continue cooking in the wok.'
+                },
+                tomyumgoong: {
+                    title: 'ต้มยำกุ้ง (Tom Yum Goong)',
+                    img: 'thimg/tomyumgong.png',
+                    description: 'Hot and sour soup with shrimp, lemongrass, and kaffir lime leaves.',
+                    ingredients: `
+                        <ul>
+                            <li>500ml chicken or vegetable broth</li>
+                            <li>200g shrimp, peeled and deveined</li>
+                            <li>2 stalks lemongrass, bruised and cut into 2-inch pieces</li>
+                            <li>4 kaffir lime leaves</li>
+                            <li>2 bird's eye chilies, sliced</li>
+                            <li>2 tbsp fish sauce</li>
+                            <li>2 tbsp lime juice</li>
+                            <li>1 tbsp palm sugar</li>
+                            <li>100g mushrooms, sliced</li>
+                            <li>2 tbsp Thai chili paste (Nam Prik Pao)</li>
+                            <li>Fresh cilantro for garnish</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Bring broth to a boil in a pot</li>
+                            <li>Add lemongrass, kaffir lime leaves, and chilies</li>
+                            <li>Simmer for 5 minutes to infuse flavors</li>
+                            <li>Add shrimp and mushrooms, cook for 2-3 minutes</li>
+                            <li>Stir in fish sauce, lime juice, palm sugar, and chili paste</li>
+                            <li>Simmer for another 2 minutes</li>
+                            <li>Taste and adjust seasoning if needed</li>
+                            <li>Serve hot, garnished with fresh cilantro</li>
+                        </ol>`,
+                    time: 'Preparation Time: 15 minutes<br>Cooking Time: 15 minutes',
+                    servingSize: 'Serves 2-3',
+                    nutrition: 'Calories: 200 per serving<br>Protein: 18g<br>Carbs: 10g<br>Fat: 10g',
+                    tips: 'For a creamier version, add a splash of coconut milk at the end.'
+                },
+                greenCurry: {
+                    title: 'แกงเขียวหวาน (Green Curry)',
+                    img: 'thimg/greencurry.png',
+                    description: 'Spicy and aromatic curry with coconut milk, vegetables, and choice of meat.',
+                    ingredients: `
+                        <ul>
+                            <li>400ml coconut milk</li>
+                            <li>3 tbsp green curry paste</li>
+                            <li>300g chicken, sliced (or tofu for vegetarian option)</li>
+                            <li>1 eggplant, cubed</li>
+                            <li>100g bamboo shoots</li>
+                            <li>2 kaffir lime leaves</li>
+                            <li>2 tbsp fish sauce</li>
+                            <li>1 tbsp palm sugar</li>
+                            <li>Handful of Thai basil leaves</li>
+                            <li>2 red chilies, sliced (optional)</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>In a large pot, heat 1/2 cup coconut milk over medium heat</li>
+                            <li>Add green curry paste and stir-fry until fragrant</li>
+                            <li>Add chicken and cook until it starts to change color</li>
+                            <li>Pour in the rest of the coconut milk and bring to a simmer</li>
+                            <li>Add eggplant, bamboo shoots, and kaffir lime leaves</li>
+                            <li>Simmer for 10-15 minutes until vegetables are tender</li>
+                            <li>Season with fish sauce and palm sugar</li>
+                            <li>Stir in Thai basil leaves and remove from heat</li>
+                            <li>Serve hot with steamed rice, garnished with red chilies if desired</li>
+                        </ol>`,
+                    time: 'Preparation Time: 20 minutes<br>Cooking Time: 25 minutes',
+                    servingSize: 'Serves 3-4',
+                    nutrition: 'Calories: 400 per serving<br>Protein: 20g<br>Carbs: 15g<br>Fat: 30g',
+                    tips: 'For a thicker curry, use less coconut milk. For a thinner curry, add some chicken stock.'
+                },
+                papayaSalad: {
+                    title: 'ส้มตำ (Som Tam - Papaya Salad)',
+                    img: 'thimg/papayasalad.png',
+                    description: 'Spicy and tangy salad made with shredded green papaya.',
+                    ingredients: `
+                        <ul>
+                            <li>2 cups shredded green papaya</li>
+                            <li>1 carrot, julienned</li>
+                            <li>10 cherry tomatoes, halved</li>
+                            <li>2 cloves garlic</li>
+                            <li>2 Thai chilies</li>
+                            <li>2 tbsp dried shrimp</li>
+                            <li>2 tbsp roasted peanuts</li>
+                            <li>2 tbsp fish sauce</li>
+                            <li>2 tbsp lime juice</li>
+                            <li>1 tbsp palm sugar</li>
+                            <li>1 long bean, cut into 1-inch pieces</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>In a mortar, pound garlic and chilies into a paste</li>
+                            <li>Add dried shrimp and peanuts, lightly pound</li>
+                            <li>Add long beans and lightly bruise</li>
+                            <li>Add shredded papaya and carrot, gently pound to release juices</li>
+                            <li>Add tomatoes and lightly press</li>
+                            <li>Mix in fish sauce, lime juice, and palm sugar</li>
+                            <li>Taste and adjust seasoning as needed</li>
+                            <li>Serve immediately</li>
+                        </ol>`,
+                    time: 'Preparation Time: 20 minutes<br>Cooking Time: 10 minutes',
+                    servingSize: 'Serves 2',
+                    nutrition: 'Calories: 150 per serving<br>Protein: 8g<br>Carbs: 20g<br>Fat: 5g',
+                    tips: 'Adjust the number of chilies to your preferred spice level. For a vegetarian version, omit the dried shrimp and use soy sauce instead of fish sauce.'
+                },
+                massamanCurry: {
+                    title: 'แกงมัสมั่น (Massaman Curry)',
+                    img: 'thimg/massamancurry.png',
+                    description: 'Rich, mild curry with influences from Persian cuisine.',
+                    ingredients: `
+                        <ul>
+                            <li>500g beef, cubed (or chicken)</li>
+                            <li>400ml coconut milk</li>
+                            <li>3 tbsp massaman curry paste</li>
+                            <li>2 potatoes, cubed</li>
+                            <li>1 onion, sliced</li>
+                            <li>1/2 cup roasted peanuts</li>
+                            <li>2 tbsp tamarind paste</li>
+                            <li>2 tbsp fish sauce</li>
+                            <li>2 tbsp palm sugar</li>
+                            <li>2 bay leaves</li>
+                            <li>1 cinnamon stick</li>
+                            <li>3 cardamom pods</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>In a large pot, heat 1/2 cup coconut milk over medium heat</li>
+                            <li>Add massaman curry paste and stir-fry until fragrant</li>
+                            <li>Add beef and cook until browned</li>
+                            <li>Pour in the rest of the coconut milk and 1 cup of water</li>
+                            <li>Add potatoes, onion, peanuts, bay leaves, cinnamon, and cardamom</li>
+                            <li>Simmer for 1-1.5 hours until beef is tender</li>
+                            <li>Stir in tamarind paste, fish sauce, and palm sugar</li>
+                            <li>Simmer for another 10 minutes</li>
+                            <li>Serve hot with steamed rice</li>
+                        </ol>`,
+                    time: 'Preparation Time: 20 minutes<br>Cooking Time: 1.5-2 hours',
+                    servingSize: 'Serves 4',
+                    nutrition: 'Calories: 550 per serving<br>Protein: 30g<br>Carbs: 25g<br>Fat: 40g',
+                    tips: 'For a richer flavor, use bone-in meat. The bones will add depth to the curry during the long cooking process.'
+                },
+                padkrapow: {
+                    title: 'ผัดกระเพราไก่ (Pad Kra Pao Gai)',
+                    img: 'thimg/padkrapow.png',
+                    description: 'Stir-fried chicken with holy basil, a popular street food dish.',
+                    ingredients: `
+                        <ul>
+                            <li>300g chicken, minced</li>
+                            <li>3 cloves garlic, minced</li>
+                            <li>3 Thai chilies, finely chopped</li>
+                            <li>2 tbsp vegetable oil</li>
+                            <li>2 tbsp oyster sauce</li>
+                            <li>1 tbsp soy sauce</li>
+                            <li>1 tsp dark soy sauce</li>
+                            <li>1 tsp sugar</li>
+                            <li>1 cup holy basil leaves</li>
+                            <li>1 egg (optional, for topping)</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Heat oil in a wok over high heat</li>
+                            <li>Add garlic and chilies, stir-fry until fragrant</li>
+                            <li>Add minced chicken, break it up and cook until no longer pink</li>
+                            <li>Add oyster sauce, soy sauce, dark soy sauce, and sugar</li>
+                            <li>Stir-fry until chicken is cooked through and sauce is reduced</li>
+                            <li>Turn off heat and stir in holy basil leaves</li>
+                            <li>If desired, fry an egg separately</li>
+                            <li>Serve hot over rice, topped with the fried egg if using</li>
+                        </ol>`,
+                    time: 'Preparation Time: 10 minutes<br>Cooking Time: 10 minutes',
+                    servingSize: 'Serves 2',
+                    nutrition: 'Calories: 350 per serving<br>Protein: 25g<br>Carbs: 10g<br>Fat: 25g',
+                    tips: 'Holy basil gives this dish its distinct flavor. If unavailable, Thai sweet basil can be used as a substitute, though the flavor will be different.'
+                },
+                thaiIcedTea: {
+                    title: 'ชาเย็น (Thai Iced Tea)',
+                    img: 'thimg/thaicedtea.png',
+                    description: 'Sweet and creamy iced tea, a popular Thai beverage.',
+                    ingredients: `
+                        <ul>
+                            <li>4 tbsp Thai tea mix</li>
+                            <li>4 cups water</li>
+                            <li>4 tbsp sweetened condensed milk</li>
+                            <li>2 tbsp sugar (optional)</li>
+                            <li>Ice cubes</li>
+                            <li>Evaporated milk for topping</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Bring water to a boil in a pot</li>
+                            <li>Add Thai tea mix and remove from heat</li>
+                            <li>Steep for 5 minutes, then strain</li>
+                            <li>Stir in sweetened condensed milk and sugar (if using)</li>
+                            <li>Allow tea to cool to room temperature</li>
+                            <li>Fill glasses with ice cubes</li>
+                            <li>Pour tea over ice, leaving some room at the top</li>
+                            <li>Top with a splash of evaporated milk</li>
+                            <li>Stir before drinking</li>
+                        </ol>`,
+                    time: 'Preparation Time: 10 minutes<br>Cooling Time: 30 minutes',
+                    servingSize: 'Serves 4',
+                    nutrition: 'Calories: 120 per serving<br>Protein: 3g<br>Carbs: 20g<br>Fat: 4g',
+                    tips: 'For a less sweet version, reduce the amount of sweetened condensed milk or sugar. You can also use coconut milk instead of evaporated milk for a different flavor.'
+                },
+                longanjuice: {
+                    title: 'น้ำลำไย (Longan juice)',
+                    img: 'thimg/longan.png',
+                    description: 'Fresh and refreshing longan water, available all the year.',
+                    ingredients: `
+                        <ul>
+                            <li>500g longan without shell</li>
+                            <li>Sugar (optional)</li>
+                            <li>1.5L Water</li>
+                            <li>Ice</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Bring water to boil and stir in longans. Simmer 20 minutes. Stir in sugar.</li>
+                            <li>Chill thoroughly, 1 hour.</li>
+                            <li>Pour over ice and serve immediately.</li>
+                          
+                        </ol>`,
+                    time: 'Preparation Time: 2 hours',
+                    servingSize: 'Serves 5',
+                    nutrition: 'Calories: 60-100 per 250ml<br>Protein: 1.3g<br>Carbs: 15.14g<br>Fat: 0.1g',
+                    tips: 'Look for coconuts that sound full of water when shaken. The water from younger coconuts is generally sweeter and more flavorful.'
+                }
+            };
+
+            localStorage.setItem('selectedRecipe', recipe);
+
+            document.getElementById('recipe-title').innerHTML = recipes[recipe].title;
+            document.getElementById('recipe-img').src = recipes[recipe].img;
+            document.getElementById('recipe-description').innerHTML = recipes[recipe].description;
+            document.getElementById('recipe-ingredients').innerHTML = recipes[recipe].ingredients;
+            document.getElementById('recipe-steps').innerHTML = recipes[recipe].steps;
+            document.getElementById('recipe-time').innerHTML = recipes[recipe].time;
+            document.getElementById('recipe-serving-size').innerHTML = recipes[recipe].servingSize;
+            document.getElementById('recipe-nutrition').innerHTML = recipes[recipe].nutrition;
+            document.getElementById('recipe-tips').innerHTML = recipes[recipe].tips;
+            document.getElementById('recipe-details').style.display = 'block';
+
+            document.getElementById('recipe-details').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.onscroll = function() {
+            var scrollTopButton = document.getElementById('scroll-top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollTopButton.classList.add('show');
+            } else {
+                scrollTopButton.classList.remove('show');
+            }
+        };
+
+        window.onload = function() {
+            const lastViewedRecipe = localStorage.getItem('selectedRecipe');
+            if (lastViewedRecipe) {
+                showRecipe(lastViewedRecipe);
+            }
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../Main/main.html">Home</a></li>
+                <li><a href="../Country/Italian.html">Italian</a></li>
+                <li><a href="../Country/Japanese.html">Japanese</a></li>
+                <li><a href="../Country/Thai.html">Thailand</a></li>
+            </ul>
+        </nav>
+        <h1>อาหารไทย <span>Thai Cuisine</span></h1>
+    </header>
+    <main>
+        <section class="recipe-grid">
+            <div class="recipe-card" onclick="showRecipe('padthai')">
+                <img src="thimg/padthai.png" alt="Pad Thai">
+                <h3>ผัดไทย <span>Pad Thai</span></h3>
+                <p>Stir-fried rice noodles with shrimp, tofu, and peanuts.</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('tomyumgoong')">
+                <img src="thimg/tomyumgong.png" alt="Tom Yum Goong">
+                <h3>ต้มยำกุ้ง <span>Tom Yum Goong</span></h3>
+                <p>Spicy and sour shrimp soup with lemongrass.</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('greenCurry')">
+                <img src="thimg/greencurry.png" alt="Green Curry">
+                <h3>แกงเขียวหวาน <span>Green Curry</span></h3>
+                <p>Spicy coconut curry with vegetables and meat.</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('papayaSalad')">
+                <img src="thimg/papayasalad.png" alt="Papaya Salad">
+                <h3>ส้มตำ <span>Som Tam</span></h3>
+                <p>Spicy green papaya salad with peanuts and dried shrimp.</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('massamanCurry')">
+                <img src="thimg/massamancurry.png" alt="Massaman Curry">
+                <h3>แกงมัสมั่น <span>Massaman Curry</span></h3>
+                <p>Rich, mild curry with potatoes and peanuts.</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('padkrapow')">
+                <img src="thimg/padkrapow.png" alt="Pad Kra Pao">
+                <h3>ผัดกระเพราไก่ <span>Pad Kra Pao Gai</span></h3>
+                <p>Stir-fried chicken with holy basil.</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('thaiIcedTea')">
+                <img src="thimg/thaicedtea.png" alt="Thai Iced Tea">
+                <h3>ชาเย็น <span>Thai Iced Tea</span></h3>
+                <p>Sweet and creamy iced tea.</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('longanjuice')">
+                <img src="thimg/longan.png" alt="Longan Juice">
+                <h3>น้ำลำไย <span>Longan Juice</span></h3>
+                <p>Fresh served after chill.</p>
+            </div>
+        </section>
+        <section id="recipe-details" style="display: none;">
+            <h2 id="recipe-title"></h2>
+            <img id="recipe-img" src="" alt="">
+            <p id="recipe-description"></p>
+            <div class="recipe-info">
+                <div class="info-card">
+                    <h3>ส่วนผสม <span>Ingredients</span></h3>
+                    <div id="recipe-ingredients"></div>
+                </div>
+                <div class="info-card">
+                    <h3>วิธีทำ <span>Steps</span></h3>
+                    <div id="recipe-steps"></div>
+                </div>
+                <div class="info-card">
+                    <h3>เวลา <span>Time</span></h3>
+                    <p id="recipe-time"></p>
+                </div>
+                <div class="info-card">
+                    <h3>ปริมาณ <span>Serving Size</span></h3>
+                    <p id="recipe-serving-size"></p>
+                </div>
+                <div class="info-card">
+                    <h3>คุณค่าทางโภชนาการ <span>Nutrition</span></h3>
+                    <p id="recipe-nutrition"></p>
+                </div>
+                <div class="info-card">
+                    <h3>เคล็ดลับ <span>Tips</span></h3>
+                    <p id="recipe-tips"></p>
+                </div>
+            </div>
+        </section>
+        <button id="scroll-top" onclick="scrollToTop()">กลับขึ้นด้านบน</button>
+    </main>
+</body>
+</html>

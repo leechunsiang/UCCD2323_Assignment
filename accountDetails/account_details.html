@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Details</title>
+    <link rel="stylesheet" href="accountStyle.css">
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="home-link">
+            <a href="../Main/main.html">
+                <img src="../logo_header/homelogo.png" alt="Home" class="home-icon">
+            </a>
+        </div>
+        <div class="logo-container">
+            <img src="../logo_header/alimama.png" alt="Logo" class="logo">
+        </div>
+        <div class="login-dropdown">
+            <img src="../logo_header/loginlogo.png" alt="Login" class="login-img">
+            <div class="dropdown-content">
+                <a href="../login/login.html">Log In</a>
+                <a href="../accountDetails/account_details.html">Account Details</a>
+                <a href="#" onclick="logout()">Log Out</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Account Details</h1>
+        <div class="account-info">
+            <p><strong>Username:</strong> <span id="username"></span></p>
+            <p><strong>Email:</strong> <span id="email"></span></p>
+            <p><strong>Registration Date:</strong> <span id="registration-date"></span></p>
+        </div>
+        <div class="text-center">
+            <button onclick="logout()">Log Out</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const username = getCookie("username");
+            const email = getCookie("email");
+            const registrationDate = getCookie("registrationDate");
+
+            if (!username || !email || !registrationDate) {
+                // Redirect to login page if cookies do not exist
+                window.location.href = "../login/login.html";
+            } else {
+                // Display the user information
+                document.getElementById("username").textContent = username;
+                document.getElementById("email").textContent = email;
+                document.getElementById("registration-date").textContent = registrationDate;
+            }
+        });
+
+        function getCookie(name) {
+            let cookieArr = document.cookie.split(";");
+            for (let i = 0; i < cookieArr.length; i++) {
+                let cookiePair = cookieArr[i].split("=");
+                if (name == cookiePair[0].trim()) {
+                    return decodeURIComponent(cookiePair[1]);
+                }
+            }
+            return null;
+        }
+    </script>
+    <script src="../logout/logout.js"></script>
+</body>
+
+</html>

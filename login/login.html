@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="loginStyle.css">
+    <link rel="icon" href="../logo_header/logo_white.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="home-link">
+            <a href="../Main/main.html">
+                <img src="logo_header/homelogo.png" alt="Home" class="home-icon">
+            </a>
+        </div>
+        <div class="logo-container">
+            <img src="logo_header/alimama.png" alt="Logo" class="logo">
+        </div>
+
+        <div class="login-dropdown">
+            <img src="logo_header/loginlogo.png" alt="Login" class="login-img">
+            <div class="dropdown-content">
+                <a href="../login/login.html">Log In</a>
+                <a href="../accountDetails/account_details.html">Account Details</a>
+                <a href="#" onclick="logout()">Log Out</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Login</h1>
+        <form onsubmit="loginUser(event)">
+            <label for="email">Email:</label><br>
+            <input type="email" id="login-email" name="email" required><br><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="login-password" name="password" required><br><br>
+
+            <input type="submit" value="Login">
+        </form>
+
+        <div class="text-center">
+            <p class="text-muted">Don't have an account? <a href="../register/register.html">Register here</a>.</p>
+        </div>
+
+    </div>
+
+    <script>
+        function getCookie(name) {
+            let cookies = document.cookie.split('; ');
+            for (let i = 0; i < cookies.length; i++) {
+                let cookiePair = cookies[i].split('=');
+                if (cookiePair[0] === name) {
+                    return decodeURIComponent(cookiePair[1]);
+                }
+            }
+            return null;
+        }
+
+        function loginUser(e) {
+            e.preventDefault();
+
+            let email = document.getElementById("login-email").value;
+            let password = document.getElementById("login-password").value;
+
+            let storedEmail = getCookie("email");
+            let storedPassword = getCookie("password");
+
+            if (email === storedEmail && password === storedPassword) {
+                window.location.href = "/main/main.html";
+            } else {
+                alert("Invalid email or password!");
+            }
+        }
+    </script>
+    <script src="../logout/logout.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f0f8ff, #e6f3ff);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(to right, #1effe5, #e141c9);
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header nav {
+    margin-top: 15px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+header nav a:hover {
+    color: #ffd700;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+main {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #ffd700;
+}
+
+h2 {
+    text-align: center;
+    color: #6d1eff;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 0;
+    background: url('hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+    color: rgb(14, 7, 7);
+    margin-bottom: 30px;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 1000px; 
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.arrow {
+    cursor: pointer;
+    font-size: 2.5em;
+    color: #000000;
+    padding: 10px;
+    border-radius: 50%;
+    user-select: none;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.carousel:hover .arrow {
+    opacity: 1;
+}
+
+.arrow.left {
+    left: 20px;
+}
+
+.arrow.right {
+    right: 20px;
+}
+
+.drink-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.drink {
+    flex: 0 0 100%; 
+    box-sizing: border-box;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.drink:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.drink-image {
+    width: 300px; 
+    height: auto;
+    margin-right: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.drink-image:hover {
+    transform: scale(1.05);
+}
+
+.drink-description {
+    flex: 1;
+}
+
+.drink h3 {
+    color: #ffd700;
+    margin-top: 0;
+    font-size: 1.8em;
+}
+
+.drink p {
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+.drink a {
+    color: #0b4ad3;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.drink a:hover {
+    color: #e14141;
+    text-decoration: underline;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 60px;
+}
+
+.popup-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 700px;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 2.5em;
+    cursor: pointer;
+    color: #1e90ff;
+    transition: all 0.3s ease;
+}
+
+.close:hover {
+    color: #4169e1;
+}
+
+.counter {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.3em;
+    color: #1800b6;
+    font-weight: bold;
+}
+
+.additional-info {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.additional-info h2, .additional-info h3 {
+    color: #1e90ff;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.additional-info h3 {
+    font-size: 1.5em;
+    margin-top: 30px;
+}
+
+.drink-qa .qa-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.drink-qa .qa-item:hover {
+    background-color: #e6f3ff;
+    transform: translateX(5px);
+}
+
+.drink-qa h4 {
+    color: #1e90ff;
+    margin-bottom: 10px;
+}
+
+.drink-types ul, .drink-facts ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.drink-types li, .drink-facts li {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.drink-types li:hover, .drink-facts li:hover {
+    background-color: #e6f3ff;
+    transform: translateX(5px);
+}
+
+.fact-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.fact {
+    text-align: center;
+    margin: 20px;
+    flex-basis: 30%;
+}
+
+.fact i {
+    font-size: 3em;
+    color: #1e90ff;
+    margin-bottom: 10px;
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-section input, .contact-section textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact-section button {
+    background-color: #1e90ff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-section button:hover {
+    background-color: #4169e1;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #1e90ff;
+}
+
+@media (max-width: 768px) {
+    .drink {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .drink-image {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .fact {
+        flex-basis: 100%;
+    }
+}

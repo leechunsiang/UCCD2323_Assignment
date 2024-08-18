@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="registerStyle.css">
+    <link rel="icon" href="../logo_header/logo_white.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="home-link">
+            <a href="../Main/main.html">
+                <img src="../logo_header/homelogo.png" alt="Home" class="home-icon">
+            </a>
+        </div>
+        <div class="logo-container">
+            <img src="../logo_header/alimama.png" alt="Logo" class="logo">
+        </div>
+
+        <div class="login-dropdown">
+            <img src="../logo_header/loginlogo.png" alt="Login" class="login-img">
+            <div class="dropdown-content">
+                <a href="../login/login.html">Log In</a>
+                <a href="../accountDetails/account_details.html">Account Details</a>
+                <a href="#" onclick="logout()">Log Out</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Register</h1>
+        <form onsubmit="registerUser(event)">
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <label for="confirm-password">Confirm Password:</label><br>
+            <input type="password" id="confirm-password" name="confirm-password" required><br><br>
+
+            <input type="submit" value="Register">
+        </form>
+
+        <div class="text-center">
+            <p class="text-muted">Already have an account? <a href="../login/login.html">Login here</a>.</p>
+        </div>
+    </div>
+
+    <script>
+        function registerUser(e) {
+            e.preventDefault();
+
+            let email = document.getElementById("email").value;
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirm-password").value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            // Store user data in local storage for simplicity
+            localStorage.setItem("email", email);
+            localStorage.setItem("username", username);
+            localStorage.setItem("password", password);
+
+            // Store the registration date
+            let registrationDate = new Date().toLocaleDateString();
+            localStorage.setItem("registrationDate", registrationDate);
+
+            alert("User registered successfully!");
+
+            // Redirect to login page
+            window.location.href = "../login/login.html";
+        }
+    </script>
+    <script src="../logout/logout.js"></script>
+</body>
+
+</html>
+

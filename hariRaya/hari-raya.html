@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hari Raya Aidilfitri Cuisines</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+SC:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="hari-rayastyle.css">
+    <link rel="icon" href="../logo_header/logo_white.png" type="image/x-icon">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.recipe-section');
+
+            const options = {
+                threshold: 0.5,
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.id === 'yu-sheng' || entry.target.id === 'pTart') {
+                            entry.target.classList.add('fade-in-left');
+                        } else {
+                            entry.target.classList.add('fade-in-right');
+                        }
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="home-link">
+            <a href="../Main/main.html">
+                <img src="logo_header/homelogo.png" alt="Home" class="home-icon">
+            </a>
+        </div>
+        <div class="dropdown">
+            <a href="/festivals/festivals.html" class="main-category">Festives &#9662;</a>
+            <div class="dropdown-content">
+                <a href="../cny/CNYfood.html">Chinese New Year</a>
+                <a href="../deepavali/deepavali.html">Deepavali</a>
+                <a href="../hariRaya/hari-raya.html">Hari Raya Aidilfitri</a>
+            </div>
+        </div>
+        <div class="login-dropdown">
+            <img src="logo_header/loginlogo.png" alt="Login" class="login-img">
+            <div class="dropdown-content">
+                <a href="../login/login.html">Log In</a>
+                <a href="../accountDetails/account_details.html">Account Details</a>
+                <a href="#" onclick="logout()">Log Out</a>
+            </div>
+        </div>
+        <div class="logo-container">
+            <img src="logo_header/alimama.png" alt="Logo" class="logo">
+        </div>
+    </div>
+    <div class="banner">
+        <h1>
+           Hari Raya Aidilfitri Cuisines
+        </h1>
+    </div>
+    <!-- Navigation Bar -->
+    <nav class="nav">
+        <ul>
+            <li><a href="#rendang">Rendang</a></li>
+            <li><a href="#lemang">Lemang</a></li>
+            <li><a href="#ketupat">Ketupat</a></li>
+            <li><a href="#satay">Satay</a></li>
+        </ul>
+    </nav>
+
+    <!-- Recipes -->
+    <div class="container">
+        <section id="rendang" class="recipe-section">
+            <h1>1. RENDANG</h1>
+            <div class="recipe-content">
+
+                <div class="recipe-image">
+                    <img src="hariRayaImg/rendang.png" alt="rendang">
+                    <p class="description">Rendang is a slow-cooked, dry curry made with beef, coconut milk, and a rich
+                        blend of spices like lemongrass, turmeric, and chilies, resulting in tender, flavorful meat with
+                        a deep, aromatic sauce.</p>
+                </div>
+                <div class="recipe-details">
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <li>1 kg beef, cut into cubes</li>
+                        <li>400 ml coconut milk</li>
+                        <li>2 stalks lemongrass, smashed</li>
+                        <li>4 kaffir lime leaves</li>
+                        <li>2 turmeric leaves (optional)</li>
+                        <li>2-3 tablespoons tamarind paste</li>
+                        <li>1 tablespoon sugar (palm sugar preferred)</li>
+                        <li>Salt to taste</li>
+                    </ul>
+                    <h3>For the spice taste</h3>
+                    <ul>
+                        <li>8-10 dried chilies, soaked and deseeded</li>
+                        <li>4 shallots</li>
+                        <li>4 cloves garlic</li>
+                        <li>2 inches galangal</li>
+                        <li>2 inches ginger</li>
+                        <li>1 teaspoon turmeric powder</li>
+                        <li>2 teaspoons coriander seeds</li>
+                        <li>1 teaspoon cumin seeds</li>
+                    </ul>
+                    <h2>Preparation Steps</h2>
+                    <ol>
+                        <li>Make the Spice Paste</li>
+                        <li>Cook the Beef</li>
+                        <li>Add Coconut Milk and Spices</li>
+                        <li>Simmer the Rendang</li>
+                        <li>Adjust Seasoning</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="lemang" class="recipe-section">
+            <h1>2. LEMANG</h1>
+            <div class="recipe-content">
+
+                <div class="recipe-image">
+                    <img src="hariRayaImg/lemang.png" alt="lemang">
+                    <p class="description">Traditional Malaysian dish made from glutinous rice and coconut milk,
+                         cooked in hollow bamboo stalks over an open fire.</p>
+                </div>
+                <div class="recipe-details">
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <li>2 cups glutinous rice</li>
+                        <li>1 1/2 cups coconut milk</li>
+                        <li>1/2 teaspoon salt</li>
+                        <li>Banana leaves (for lining)</li>
+                        <li>Bamboo stalks (cut into sections) </li>
+                    </ul>
+                    <h2>Preparation Steps</h2>
+                    <ol>
+                        <li>Prepare the Rice</li>
+                        <li>Mix with Coconut Milk</li>
+                        <li>Prepare the Bamboo</li>
+                        <li>Fill the Bamboo</li>
+                        <li>Cook the Lemang</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="ketupat" class="recipe-section">
+            <h1>3. KETUPAT</h1>
+            <div class="recipe-content">
+
+                <div class="recipe-image">
+                    <img src="hariRayaImg/ketupat.png" alt="ketupat">
+                    <p class="description">Made of rice compressed and cooked in woven palm leaf pouches,
+                         resulting in a compact, diamond-shaped rice cake.</p>
+                </div>
+                <div class="recipe-details">
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <li>2 cups uncooked rice (typically white rice)</li>
+                        <li>Palm leaves (for weaving pouches)</li>
+                    </ul>
+                    <h2>Preparation Steps</h2>
+                    <ol>
+                        <li>Weave the Palm Leaf Pouches</li>
+                        <li>Prepare the Rice</li>
+                        <li>Fill the Pouches</li>
+                        <li>Cook the Ketupat</li>
+                        <li>Drain and Cool</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="satay" class="recipe-section">
+            <h1>4. SATAY</h1>
+            <div class="recipe-content">
+
+                <div class="recipe-image">
+                    <img src="hariRayaImg/satay.png" alt="satay">
+                    <p class="description">Dish consisting of skewered and grilled meat,
+                         usually chicken, beef, or lamb, marinated in a flavorful blend of spices</p>
+                </div>
+                <div class="recipe-details">
+                    <h2>Ingredients</h2>
+                    <h3>For the marinade</h3>
+                    <ul>
+                        <li>500g chicken, beef, or lamb, cut into small cubes</li>
+                        <li>2 tablespoons soy sauce</li>
+                        <li>2 tablespoons lemongrass, finely chopped</li>
+                        <li>2 tablespoons turmeric powder</li>
+                        <li>1 tablespoon coriander powder</li>
+                        <li>1 tablespoon cumin powder</li>
+                        <li>2 tablespoons sugar</li>
+                        <li>2 tablespoons oil</li>
+                        <li>Salt to taste</li>
+                    </ul>
+                    <h3>For the peanut sauce</h3>
+                    <ul>
+                        <li>1 cup roasted peanuts</li>
+                        <li>2 cloves garlic</li>
+                        <li>2 red chilies</li>
+                        <li>1 tablespoon tamarind paste</li>
+                        <li>2 tablespoons sugar</li>
+                        <li>1/2 cup coconut milk</li>
+                        <li>Salt to taste</li>
+                    </ul>
+                    <h2>Preparation Steps</h2>
+                    <ol>
+                        <li>Marinate the Meat</li>
+                        <li>Prepare the Peanut Sauce</li>
+                        <li>Skewer the Meat</li>
+                        <li>Grill the Satay</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <button id="scroll-top" onclick="scrollToTop()">TOP</button>
+    <script src="../logout/logout.js"></script>
+</body>
+
+</html>

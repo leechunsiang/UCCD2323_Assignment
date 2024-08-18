@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Cuisine</title>
+    <link rel="stylesheet" href="stylejp.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../logo_header/logo_white.png" type="image/x-icon">
+    <script>
+        function showRecipe(recipe) {
+            const recipes = {
+                sushi: {
+                    title: '寿司 (Sushi)',
+                    img: 'jpimg/sushi_cook.jpg',
+                    description: 'Fresh fish and rice rolled in nori seaweed.',
+                    ingredients: `
+                        <ul>
+                            <li>Sushi-grade fish</li>
+                            <li>Sushi rice</li>
+                            <li>Nori seaweed</li>
+                            <li>Rice vinegar</li>
+                            <li>Wasabi</li>
+                            <li>Soy sauce</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Prepare sushi rice and let it cool</li>
+                            <li>Slice fish into thin pieces</li>
+                            <li>Place nori on bamboo mat</li>
+                            <li>Spread rice on nori</li>
+                            <li>Add fish and roll tightly</li>
+                            <li>Slice roll into pieces</li>
+                        </ol>`,
+                    time: 'Preparation Time: 30 minutes<br>Cooking Time: 20 minutes',
+                    servingSize: 'Serves 2-3 people (8-10 rolls)',
+                    nutrition: 'Calories: 350 per roll<br>Protein: 15g<br>Carbs: 40g<br>Fat: 10g',
+                    tips: 'Use short-grain sushi rice for best results. Wet your hands to prevent rice from sticking while rolling.'
+                },
+                ramen: {
+                    title: 'ラーメン (Ramen)',
+                    img: 'jpimg/ramen_cook.jpg',
+                    description: 'Noodle soup with various toppings.',
+                    ingredients: `
+                        <ul>
+                            <li>2 lb pork belly or a little more/less</li>
+                            <li>2 green onions spring onions, or 3 if small</li>
+                            <li>1 in fresh ginger (a chunk that will give around 4 - 6 slices)</li>
+                            <li>2 cloves garlic</li>
+                            <li>2/3 cup sake</li>
+                            <li>2/3 cup soy sauce</li>
+                            <li>1/4 cup mirin</li>
+                            <li>1/2 cup sugar</li>
+                            <li>2 cups water or a little more as needed</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Prepare broth</li>
+                            <li>Cook noodles separately</li>
+                            <li>Slice chashu</li>
+                            <li>Assemble bowl with noodles and broth</li>
+                            <li>Add toppings</li>
+                            <li>Serve hot</li>
+                        </ol>`,
+                    time: 'Preparation Time: 20 minutes<br>Cooking Time: 3 hours (for broth)',
+                    servingSize: 'Serves 4',
+                    nutrition: 'Calories: 550 per serving<br>Protein: 25g<br>Carbs: 65g<br>Fat: 22g',
+                    tips: 'For a richer broth, simmer for longer. Don\'t overcook the noodles to maintain their texture.'
+                },
+                tempura: {
+                    title: '天ぷら (Tempura)',
+                    img: 'jpimg/tempura_cook.jpg',
+                    description: 'Lightly battered and deep-fried seafood and vegetables.',
+                    ingredients: `
+                        <ul>
+                            <li>Assorted vegetables (sweet potato, eggplant, bell pepper)</li>
+                            <li>Shrimp</li>
+                            <li>All-purpose flour</li>
+                            <li>Ice-cold water</li>
+                            <li>Egg</li>
+                            <li>Vegetable oil for frying</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Prepare vegetables and shrimp</li>
+                            <li>Mix flour, water, and egg to make batter</li>
+                            <li>Heat oil in a deep pot</li>
+                            <li>Dip ingredients in batter and fry until golden</li>
+                            <li>Drain excess oil and serve with dipping sauce</li>
+                        </ol>`,
+                    time: 'Preparation Time: 20 minutes<br>Cooking Time: 15 minutes',
+                    servingSize: 'Serves 3-4',
+                    nutrition: 'Calories: 300 per serving<br>Protein: 10g<br>Carbs: 25g<br>Fat: 18g',
+                    tips: 'Keep the batter cold and don\'t overmix for the crispiest tempura. Use a thermometer to maintain oil temperature.'
+                },
+                tonkatsu: {
+                    title: 'とんかつ (Tonkatsu)',
+                    img: 'jpimg/tonkatsu.jpg',
+                    description: 'Breaded and deep-fried pork cutlet.',
+                    ingredients: `
+                        <ul>
+                            <li>Pork loin chops</li>
+                            <li>All-purpose flour</li>
+                            <li>Beaten eggs</li>
+                            <li>Panko breadcrumbs</li>
+                            <li>Vegetable oil for frying</li>
+                            <li>Tonkatsu sauce</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Tenderize pork chops</li>
+                            <li>Coat pork in flour, egg, and breadcrumbs</li>
+                            <li>Heat oil in a deep pan</li>
+                            <li>Fry breaded pork until golden brown</li>
+                            <li>Drain excess oil and let rest</li>
+                            <li>Slice and serve with tonkatsu sauce</li>
+                        </ol>`,
+                    time: 'Preparation Time: 15 minutes<br>Cooking Time: 10 minutes',
+                    servingSize: 'Serves 2',
+                    nutrition: 'Calories: 650 per serving<br>Protein: 40g<br>Carbs: 35g<br>Fat: 38g',
+                    tips: 'Double-bread the pork for extra crispiness. Let the cutlet rest for a few minutes before slicing to retain juices.'
+                },
+                oden: {
+                    title: 'おでん (Oden)',
+                    img: 'jpimg/oden.jpg',
+                    description: 'Simmered dish with various ingredients like boiled eggs, daikon, and fish cakes.',
+                    ingredients: `
+                        <ul>
+                            <li>Boiled eggs</li>
+                            <li>Daikon radish</li>
+                            <li>Konnyaku</li>
+                            <li>Chikuwa (fish cake)</li>
+                            <li>Kamaboko (fish loaf)</li>
+                            <li>Broth (kombu and bonito base)</li>
+                            <li>Mustard for dipping</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Prepare broth with kombu and bonito flakes</li>
+                            <li>Simmer ingredients in broth</li>
+                            <li>Cook until flavors meld, about 1-2 hours</li>
+                            <li>Serve hot with mustard on the side</li>
+                        </ol>`,
+                    time: 'Preparation Time: 30 minutes<br>Cooking Time: 1-2 hours',
+                    servingSize: 'Serves 4-6',
+                    nutrition: 'Calories: 250 per serving<br>Protein: 15g<br>Carbs: 20g<br>Fat: 12g',
+                    tips: 'The longer you simmer, the more flavorful the dish becomes. Oden tastes even better the next day.'
+                },
+                kaiseki: {
+                    title: '懐石料理 (Kaiseki)',
+                    img: 'jpimg/kaiseki_cook.jpg',
+                    description: 'Traditional multi-course meal showcasing seasonal ingredients.',
+                    ingredients: `
+                        <ul>
+                            <li>Seasonal fish (e.g., sashimi-grade tuna)</li>
+                            <li>Assorted vegetables (e.g., bamboo shoots, mushrooms)</li>
+                            <li>Tofu</li>
+                            <li>Dashi stock</li>
+                            <li>Soy sauce</li>
+                            <li>Sake</li>
+                            <li>Mirin</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Prepare dashi stock</li>
+                            <li>Create small dishes featuring seasonal ingredients</li>
+                            <li>Arrange dishes elegantly on plates</li>
+                            <li>Serve each course in a specific order, typically starting with a light appetizer</li>
+                            <li>Enjoy the meal with a focus on presentation and seasonal flavors</li>
+                        </ol>`,
+                    time: 'Preparation Time: Varies<br>Cooking Time: Varies',
+                    servingSize: 'Typically serves 1 person per set',
+                    nutrition: 'Varies by course, generally balanced and portion-controlled',
+                    tips: 'Focus on seasonality and presentation. Each dish should complement the others in flavor and appearance.'
+                },
+                matcha: {
+                    title: '抹茶 (Matcha)',
+                    img: 'jpimg/matcha.jpg',
+                    description: 'Traditional powdered green tea.',
+                    ingredients: `
+                        <ul>
+                            <li>Matcha powder</li>
+                            <li>Hot water</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Sift matcha powder into a bowl</li>
+                            <li>Add a small amount of hot water</li>
+                            <li>Whisk vigorously in a "W" motion</li>
+                            <li>Add more hot water to desired consistency</li>
+                            <li>Whisk until frothy</li>
+                            <li>Serve immediately</li>
+                        </ol>`,
+                    time: 'Preparation Time: 5 minutes<br>Cooking Time: N/A',
+                    servingSize: 'Serves 1',
+                    nutrition: 'Calories: 5 per serving<br>Protein: 1g<br>Carbs: 1g<br>Fat: 0g',
+                    tips: 'Use water just below boiling point for the best flavor. Sift the matcha to avoid clumps.'
+                },
+                amazake: {
+                    title: '甘酒 (Amazake)',
+                    img: 'jpimg/amazake.jpg',
+                    description: 'Sweet fermented rice drink.',
+                    ingredients: `
+                        <ul>
+                            <li>Cooked rice</li>
+                            <li>Rice koji</li>
+                            <li>Water</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Mix cooked rice and rice koji</li>
+                            <li>Add water and mix well</li>
+                            <li>Keep mixture at 55-60°C (131-140°F) for 8-10 hours</li>
+                            <li>Stir occasionally during fermentation</li>
+                            <li>Blend the mixture until smooth</li>
+                            <li>Serve hot or cold</li>
+                        </ol>`,
+                    time: 'Preparation Time: 20 minutes<br>Fermentation Time: 8-10 hours',
+                    servingSize: 'Serves 4-6',
+                    nutrition: 'Calories: 80 per serving<br>Protein: 2g<br>Carbs: 18g<br>Fat: 0g',
+                    tips: 'Maintain a consistent temperature during fermentation for the best results. Can be enjoyed hot or cold.'
+                }
+            };
+
+            localStorage.setItem('selectedRecipe', recipe);
+
+            document.getElementById('recipe-title').innerHTML = recipes[recipe].title;
+            document.getElementById('recipe-img').src = recipes[recipe].img;
+            document.getElementById('recipe-description').innerHTML = recipes[recipe].description;
+            document.getElementById('recipe-ingredients').innerHTML = recipes[recipe].ingredients;
+            document.getElementById('recipe-steps').innerHTML = recipes[recipe].steps;
+            document.getElementById('recipe-time').innerHTML = recipes[recipe].time;
+            document.getElementById('recipe-serving-size').innerHTML = recipes[recipe].servingSize;
+            document.getElementById('recipe-nutrition').innerHTML = recipes[recipe].nutrition;
+            document.getElementById('recipe-tips').innerHTML = recipes[recipe].tips;
+            document.getElementById('recipe-details').style.display = 'block';
+
+            document.getElementById('recipe-details').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.onscroll = function() {
+            var scrollTopButton = document.getElementById('scroll-top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollTopButton.classList.add('show');
+            } else {
+                scrollTopButton.classList.remove('show');
+            }
+        };
+
+        window.onload = function() {
+            const lastViewedRecipe = localStorage.getItem('selectedRecipe');
+            if (lastViewedRecipe) {
+                showRecipe(lastViewedRecipe);
+            }
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../Main/main.html">Home</a></li>
+                <li><a href="../Country/Italian.html">Italian</a></li>
+                <li><a href="../Country/Japanese.html">Japanese</a></li>
+                <li><a href="../Country/Thai.html">Thailand</a></li>
+            </ul>
+        </nav>
+        <h1>日本料理 <span>Japanese Cuisine</span></h1>
+    </header>
+    <main>
+        <section class="recipe-grid">
+            <div class="recipe-card" onclick="showRecipe('sushi')">
+                <img src="Jpimg/sushi.jpg" alt="Sushi">
+                <h3>寿司 <span>Sushi</span></h3>
+                <p>Fresh fish and rice rolled in nori seaweed.</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('ramen')">
+                <img src="Jpimg/ramen.jpg" alt="Ramen">
+                <h3>ラーメン <span>Ramen</span></h3>
+                <p>Noodle soup with various toppings.</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('tempura')">
+                <img src="Jpimg/tempura.jpg" alt="Tempura">
+                <h3>天ぷら <span>Tempura</span></h3>
+                <p>Lightly battered and deep-fried seafood and vegetables.</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('tonkatsu')">
+                <img src="Jpimg/tonkatsu.jpg" alt="Tonkatsu">
+                <h3>とんかつ <span>Tonkatsu</span></h3>
+                <p>Breaded and deep-fried pork cutlet.</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('oden')">
+                <img src="Jpimg/oden.jpg" alt="Oden">
+                <h3>おでん <span>Oden</span></h3>
+                <p>Simmered dish with various ingredients like boiled eggs, daikon, and fish cakes.</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('kaiseki')">
+                <img src="Jpimg/kaiseki.jpg" alt="Kaiseki">
+                <h3>懐石料理 <span>Kaiseki</span></h3>
+                <p>Traditional multi-course meal showcasing seasonal ingredients.</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('matcha')">
+                <img src="Jpimg/matcha.jpg" alt="Matcha">
+                <h3>抹茶 <span>Matcha</span></h3>
+                <p>Traditional powdered green tea.</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('amazake')">
+                <img src="Jpimg/amazake.jpg" alt="Amazake">
+                <h3>甘酒 <span>Amazake</span></h3>
+                <p>Sweet fermented rice drink.</p>
+            </div>
+        </section>
+        <section id="recipe-details" style="display: none;">
+            <h2 id="recipe-title"></h2>
+            <img id="recipe-img" src="" alt="">
+            <p id="recipe-description"></p>
+            <div class="recipe-info">
+                <div class="info-card">
+                    <h3>材料 <span>Ingredients</span></h3>
+                    <div id="recipe-ingredients"></div>
+                </div>
+                <div class="info-card">
+                    <h3>手順 <span>Steps</span></h3>
+                    <div id="recipe-steps"></div>
+                </div>
+                <div class="info-card">
+                    <h3>所要時間 <span>Time Needed</span></h3>
+                    <p id="recipe-time"></p>
+                </div>
+                <div class="info-card">
+                    <h3>分量 <span>Serving Size</span></h3>
+                    <p id="recipe-serving-size"></p>
+                </div>
+                <div class="info-card">
+                    <h3>栄養情報 <span>Nutritional Information</span></h3>
+                    <p id="recipe-nutrition"></p>
+                </div>
+                <div class="info-card">
+                    <h3>調理のコツ <span>Preparation Tips</span></h3>
+                    <p id="recipe-tips"></p>
+                </div>
+            </div>
+        </section>
+        <button id="scroll-top" onclick="scrollToTop()">トップへ戻る</button>
+    </main>
+</body>
+</html>

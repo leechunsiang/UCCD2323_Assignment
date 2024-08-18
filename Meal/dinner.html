@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinner</title>
+    <link rel="stylesheet" href="dinnerstyle.css">
+    <link rel="icon" href="../logo_header/logo_white.png" type="image/x-icon">
+    <script>
+        function showRecipe(recipe) {
+            const recipes = {
+                ChickenStirFry: {
+                    title: 'Chicken Stir-Fry',
+                    img: 'dinnerimg/chickenstirfry.avif',
+                    description: 'A stir fry is our go-to weeknight dinner when we just don’t have the energy to spend a long time in the kitchen or hit the grocery store—this recipe is no exception. Make it as is for our best-ever version, then use it as a jumping-off point to create your perfect chicken stir-fry.',
+                    difficulty: '⭐⭐⭐',
+                    ingredients: `
+                        <ul>
+                            <li>1/2 c. reduced-sodium soy sauce</li>
+                            <li>2 Tbsp. honey</li>
+                            <li>2 tsp. toasted sesame oil</li>
+                            <li>1 Tbsp. canola oil</li>
+                            <li>1 head broccoli</li>
+                            <li>1 bell pepper, seeds and ribs</li>
+                            <li>1 lb. boneless, skinless chicken breast, cut into 1" pieces</li>
+                            <li>Freshly ground black pepper</li>
+                            <li>1/3 c. cashews</li>
+                            <li>2 cloves garlic</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>In a small bowl, whisk soy sauce, honey, and sesame oil.</li>
+                            <li>In a large skillet over high heat, heat oil. Cook broccoli, bell pepper, and garlic, stirring frequently, until softened, about 5 minutes. Add chicken and cook, tossing occasionally, until golden brown and cooked through, about 8 minutes. Stir in cashews; season with pepper.</li>
+                            <li>Pour sauce into skillet and bring to a simmer. Cook, stirring occasionally, until thickened, about 5 minutes.</li>
+                        </ol>`,
+                    times: '⏱️ 30 mins',
+                    yield: '4 serving',
+                    nutrition: 'Calories: About 366<br>Fat: 15g<br>Cholesterol: 83mg<br>Sodium: 1252mg<br>Carbohydrates: 22g<br>Sugar: 13g<br>Protein: 35g<br>Fiber: 6g',
+                },
+                IndianButterChickpeas: {
+                    title: 'Indian Butter Chickpeas',
+                    img: 'dinnerimg/indianbutterchickpeas.avif',
+                    description: 'Looking for your new favorite way to dress up canned chickpeas? You’re in the right place. Simmered in an aromatic tomato gravy, this vegetarian spin on classic butter chicken will forever change the way you look at a can of chickpeas.',
+                    difficulty: '⭐⭐⭐',
+                    ingredients: `
+                        <ul>
+                            <li>4 Tbsp. unsalted butter</li>
+                            <li>1 yellow onion</li>
+                            <li>1 tsp. (or more) kosher salt</li>
+                            <li>1/2 c. tomato paste</li>
+                            <li>1/2 serrano chile</li>
+                            <li>1 Tbsp. grated or finely chopped peeled ginger</li>
+                            <li>2 (14.5-oz.) can chickpeas</li>
+                            <li>1 tsp. ground cumin</li>
+                            <li>1/8 tsp. baking soda</li>
+                            <li>1 tsp. garam masala</li>
+                            <li>1 tsp. Kashmiri chili powder</li>
+                            <li>1 c. heavy cream</li>
+                            <li>1/4 c. finely chopped fresh cilantro</li>
+                            <li>Cooked jasmine rice or naan, for serving</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>In a large, high-sided skillet over medium heat, melt butter. Add onion and 1/2 teaspoon salt and cook, stirring occasionally, until softened, about 7 minutes. Add tomato paste and cook, stirring constantly, until darkened, 4 to 5 minutes. Add chile and ginger and cook, stirring, until fragrant and tomato paste is starting to stick to pan, about 1 minute more. </li>
+                            <li>Add chickpeas and baking soda and stir to combine, then add garam masala, cumin, and chili powder and cook, stirring frequently, until fragrant and incorporated, about 30 seconds.</li>
+                            <li>Stir in cream, fenugreek (if using), 1/2 teaspoon salt, and 1 cup water. Bring to a simmer over medium-high heat, then reduce heat to low and continue to simmer, stirring occasionally, until sauce is reduced, 10 to 15 minutes. </li>
+                            <li>Divide rice among bowls or plates. Season chickpeas with salt, if needed, then top with cilantro. Spoon chickpeas over rice.</li>
+                        </ol>`,
+                    times: '⏱️ 40 mins',
+                    yield: '4 servings',
+                    nutrition: 'Calories: About 705<br>Fat:40g<br>Cholesterol: 98mg<br>Sodium: 930mg<br>Carbohydrates: 55g<br>Sugar: 16g<br>Protein: 20g<br>Fiber: 17g',
+                },
+                BBQPulledMushrooms: {
+                    title: 'BBQ Pulled Mushrooms',
+                    img: 'dinnerimg/bbqpulledmushrooms.avif',
+                    description: 'We are loving the pulled mushroom trend at the moment. Chewy, sticky, and satisfyingly meaty without any of the meat, this recipe is so meaty we believe it could convince even the biggest of mushroom haters that these veggie heroes arent so bad after all',
+                    difficulty: '⭐⭐⭐⭐',
+                    ingredients: `
+                        <ul>
+                            <li>6 king oyster mushrooms</li>
+                            <li>2 Tbsp. extra-virgin olive oil </li>
+                            <li>1 tsp. garlic powder</li>
+                            <li>1 tsp. smoked paprika </li>
+                            <li>1/2 tsp. kosher salt </li>
+                            <li>1/4 tsp. chilli powder</li>
+                            <li>3 Tbsp. BBQ sauce</li>
+                            <li>Vegan mayonnaise, for serving</li>
+                            <li>2 brioche buns</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Preheat oven to 375°F. Using a fork, shred mushrooms into 1/2" pieces. </li>
+                            <li>Spread pulled mushrooms on a baking sheet. Drizzle with oil. Sprinkle with garlic powder, paprika, salt, and chili powder. Using your hands, toss to coat.</li>
+                            <li>Bake, mushrooms, turning halfway through, until slightly golden and about halved in size, about 20 minutes.</li>
+                            <li>Drizzle with BBQ sauce. Continue to bake until sauce is warmed through, about 5 minutes more.</li>
+                            <li>Spread mayonnaise on bottom buns. Pile mushrooms on top; close with top buns.</li>
+                        </ol>`,
+                    times: '⏱️ 40 min s',
+                    yield: '2 serving',
+                    nutrition: 'Calories: About 412<br>Fat: 21g<br>Sodium: 718mg<br>Carbohydrates: 41g<br>Sugar: 14g<br>Protein: 13g',
+                },
+                CrispySheetPanBlackBeanTacos: {
+                    title: 'Crispy Sheet-Pan Black Bean Tacos',
+                    img: 'dinnerimg/crispysheetpanblackbeantacos.avif',
+                    description: 'Tacos always bring party vibes, but when they’re baked until crisp and rimmed with crunchy cheesy frico, it’s an all-out fiesta. Featuring refried black beans stuffed inside a crunchy corn tortilla, this irresistible cross between a taco and a sheet-pan quesadilla will make any weeknight feel like a celebration.',
+                    difficulty: '⭐⭐',
+                    ingredients: `
+                        <ul>
+                            <li>5 Tbsp. neutral oil</li>
+                            <li>1 small yellow onion</li>
+                            <li>1 tsp. kosher salt</li>
+                            <li>1 Tbsp. taco seasoning</li>
+                            <li>1 (15.5-oz.) can black beans</li>
+                            <li>8 (6") yellow corn tortillas</li>
+                            <li>1 c. shredded Mexican blend cheese</li>
+                            <li>Sour cream, cilantro leaves, and lime wedges, for serving </li>
+
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Place a rack in center of oven; preheat to 425°. In a large skillet over medium heat, heat 2 tablespoons oil. Add onion, season with 1/2 teaspoon salt, and cook, stirring occasionally, until softened and sweet to the taste, about 7 minutes. Add taco seasoning and 1 tablespoon oil and cook, stirring, until fragrant, about 30 seconds.</li>
+                            <li>Add beans, remaining 1/2 teaspoon salt, and 1/2 cup water. Bring to a simmer over high heat; reduce heat to medium-low and simmer, mashing down on some beans, until thickened and reduced, 2 to 3 minutes. Remove from heat.</li>
+                            <li>Grease a large metal baking sheet with remaining 2 tablespoons oil. Arrange tortillas in a single layer, making sure that one side of tortilla is coated in oil. Spoon a scant 1/4 cup bean mixture onto one half of each tortilla.</li>
+                            <li>Top each with 2 tablespoons cheese. Fold tortillas over cheese to create a taco. Flip tacos so side with cheese is closest to baking sheet.</li>
+                            <li>Bake tacos until golden brown and crisp on the bottom, 8 to 10 minutes. Flip tacos and continue to bake until golden brown and crisp on the other side, 5 to 8 minutes longer.</li>
+                            <li>Transfer tacos to a platter. Serve with sour cream, cilantro, and lime wedges alongside (if using).</li>
+                        </ol>`,
+                    times: '⏱️ 45 mins',
+                    yield: '4 servings ',
+                    nutrition: 'Calories: About 486<br>Fat: 28g<br>Cholesterol: 27mg<br>Sodium: 559mg<br>Carbohydrates: 33g<br>Sugar: 2g<br>Protein: 16g<br>Fiber: 12g',
+                },
+                SkilletEggplantParm: {
+                    title: 'Skillet Eggplant Parm',
+                    img: 'dinnerimg/skilleteggplantparm.avif',
+                    description: 'There is no doubt that eggplant parmesan is delicious. Really, we cant get enough of this great flavor combination in dishes like Stuffed Eggplant Parm, Eggplant Parm Dip, and Eggplant Rollatini.',
+                    difficulty: '⭐⭐⭐',
+                    ingredients: `
+                        <ul>
+                            <li>3/4 c. plus 2 tbsp. extra-virgin olive oil</li>
+                            <li>2 medium eggplants</li>
+                            <li>Kosher salt</li>
+                            <li>Freshly ground black pepper</li>
+                            <li>1 1/2 c. marinara sauce</li>
+                            <li>1 1/2 c. (6 oz.) shredded mozarella</li>
+                            <li>3/4 c. (3 oz.) shredded Parmesan/li>
+                            <li>1/4 c. packed fresh basil leaves</li>
+                            <li>3/4 c. panko bread crumbs</li>
+                            <li>1 Tbsp. freshly chopped parsley</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Preheat oven to 400°F. Heat ¼ cup oil in a large, oven-safe skillet (about 12") over medium high. </li>
+                            <li>Working in three batches, add eggplant in a single layer and season with salt and pepper. Cook until golden brown on both sides, flipping halfway through, about 4 minutes per side (you may need to adjust the heat between medium and medium-high as you go). Transfer to a plate. Repeat with remaining eggplant, using ¼ cup oil per batch as needed. Remove skillet from heat.</li>
+                            <li>Add 1 cup marinara to the skillet, scraping up any bits stuck to the bottom. Arrange half the eggplant in a single layer and top with half the mozzarella and ¼ cup Parmesan. Top with remaining eggplant, dollop with remaining ½ cup marinara, and top with remaining ½ cup mozzarella, ¼ cup Parmesan, and basil leaves.</li>
+                            <li>In a small bowl, mix panko and remaining ¼ cup Parmesan with remaining 2 tablespoons oil. Season with salt and pepper and over top skillet. Bake until bubbling and breadcrumbs are golden brown, 10 to 12 minutes. Serve hot with more fresh basil leaves, if you like.</li>
+                        </ol>`,
+                    times: '⏱️ 55 mins',
+                    yield: '4 servings',
+                    nutrition: 'Calories: About 446<br>Fat: 31g<br>Cholesterol: 96mg<br>Sodium: 709mg<br>Carbohydrates: 8g<br>Sugar: 6g<br>Protein: 33g',
+                },
+                TacoSpaghetti: {
+                    title: 'Taco Spaghetti',
+                    img: 'dinnerimg/tacospaghetti.avif',
+                    description: 'One-pot taco spaghetti is a fast-as-can-be weeknight dinner that pairs all your favorite taco fixin’s with spaghetti rather than taco shells. It is perfect for those nights when you just cannot stand the thought of a sink full of dirty dishes.',
+                    difficulty: '⭐⭐',
+                    ingredients: `
+                        <ul>
+                            <li>1 lb. 93% lean ground beef</li>
+                            <li>1 small yellow onion</li>
+                            <li>4 cloves garlic</li>
+                            <li>4 c. water</li>
+                            <li>1 (14.5-oz. can) diced tomatoes</li>
+                            <li>1 (1-oz.) packet or 2 tbsp. homemade taco seasoning</li>
+                            <li>8 oz. spaghetti</li>
+                            <li>4 oz. Velveeta cheese or American cheese</li>
+                            <li>1 c. (4 oz.) sharp cheddar cheese</li>
+                            <li>1/2 c. chopped fresh cilantro</li>
+                            <li>Sour cream or Mexican crema</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>In a large pot over medium-high heat, cook ground beef, onion, and garlic, stirring occasionally, until beef is browned, 5 to 6 minutes. Add water, tomatoes, and taco seasoning, then cover and bring to a boil.</li>
+                            <li>Break spaghetti in half lengthwise and add to sauce. Reduce heat to medium, cover, and simmer until pasta is tender, 12 to 14 minutes.</li>
+                            <li>Remove from heat and stir in Velveeta, cheddar, and cilantro until cheese is melted. Serve topped with more cilantro and sour cream, if using.</li>
+                        </ol>`,
+                    times: '⏱️ 40 mins',
+                    yield: '4-6 servings',
+                    nutrition: 'Calories: About 504<br>Fat: 27g<br>Sodium: 743mg<br>Carbohydrates: 33g<br>Sugar: 3g<br>Protein: 27g<br>Fiber: 3g',
+                },
+                PizzaFrittata: {
+                    title: 'Pizza Frittata',
+                    img: 'dinnerimg/pizzafrittata.avif',
+                    description: 'A classic frittata is a perfect breakfast-for-dinner dish. They are the solution to almost every meal dilemma: whether you have leftovers going bad in your fridge or are looking for a creative way to use up all those veggies, frittatas are the answer. ',
+                    difficulty: '⭐⭐⭐',
+                    ingredients: `
+                        <ul>
+                            <li>1 Tbsp. extra-virgin olive oil</li>
+                            <li>1 small onion</li>
+                            <li>2 cloves garlic</li>
+                            <li>Kosher salt</li>
+                            <li>8 large eggs</li>
+                            <li>2 tsp. dried oregano</li>
+                            <li>2 Tbsp. skim milk</li>
+                            <li>Freshly ground black pepper</li>
+                            <li>1 1/2 c. marinara</li>
+                            <li>1/2 c. shredded mozzarella</li>
+                            <li>1/4 c. sliced pepperoni</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>SPreheat oven to 425°F. In a medium oven-proof skillet over medium heat, heat oil. Add onions and garlic and cook until tender, 5 minutes, then add spinach. Cook until wilted, 2 to 3 minutes, and season with salt.</li>
+                            <li>In a large bowl, whisk together eggs, oregano, milk, and marinara, and season with salt and pepper. Pour eggs over vegetables in skillet and cook until edges are cooked, 4 to 5 minutes.</li>
+                            <li>Top with cheese and pepperoni and transfer to the oven to bake until eggs are cooked through, 5 to 6 minutes more.</li>
+                        </ol>`,
+                    times: '⏱️ 30 mins',
+                    yield: '4 servings',
+                    nutrition: 'Calories: About 306<br>Fat: 22g<br>Cholesterol: 398mg<br>Sodium: 487mg<br>Carbohydrates: 5g<br>Sugar: 2g<br>Protein: 20g<br>',
+                },
+                ChickenFajitas: {
+                    title: 'Chicken Fajitas',
+                    img: 'diinerimg/chickenfajitas.avif',
+                    description: 'The signature smell, the trail of steam—this classic Tex-Mex dish is a showstopper. As iconic as they are when ordered out, fajitas are ridiculously easy to make at home, just how you like them. Focusing on only 3 key ingredients, our chicken fajita recipe requires minimal prep and cook time, meaning dinner on the table FAST.',
+                    difficulty: '⭐⭐⭐⭐',
+                    ingredients: `
+                        <ul>
+                            <li>1/4 c. lime juice</li>
+                            <li>1/2 tsp. crushed red pepper flakes</li>
+                            <li>1/4 c. plus 1 tbsp. neutral oil</li>
+                            <li>2 tsp. ground cumin</li>
+                            <li>1 lb. boneless, skinless chicken breasts</li>
+                            <li>Kosher salt</li>
+                            <li>Freshly ground black pepper</li>
+                            <li>2 bell peppers, seeds and ribs removed</li>
+                            <li>1 large yellow onion</li>
+                            <li>Warmed flour tortillas and lime wedges</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>In a large bowl, whisk lime juice, red pepper, 1/4 cup oil, and 1 teaspoon cumin. Season chicken with salt and black pepper, then add to bowl and toss to coat. Cover and refrigerate for at least 30 minutes or up to 2 hours.</li>
+                            <li>In a large skillet over medium heat, heat remaining 1 tablespoon oil. Add chicken and cook until golden brown and cooked through and an instant-read thermometer inserted into thickest part registers 160°, about 8 minutes per side. Transfer to a cutting board. Let rest 10 minutes, then slice into strips.</li>
+                            <li>Meanwhile, in same skillet over medium heat, combine peppers, onion, and remaining 1 teaspoon cumin; season with salt and black pepper. Cook, stirring occasionally, until softened, about 7 minutes. Return chicken to skillet and toss until combined.</li>
+                            <li>Transfer chicken mixture to a platter. Serve with tortillas and lime wedges alongside.</li>
+                        </ol>`,
+                    times: '⏱️ 1 hr',
+                    yield: '6 servings',
+                    nutrition: 'Calories: About 243<br>Fat: 14g<br>Sodium: 398mg<br>Carbohydrates: 9g<br>Protein: 19g',
+                }
+            };
+
+            document.getElementById('recipe-title').innerHTML = recipes[recipe].title;
+            document.getElementById('recipe-difficulty').innerHTML = recipes[recipe].difficulty;
+            document.getElementById('recipe-img').src = recipes[recipe].img;
+            document.getElementById('recipe-description').innerHTML = recipes[recipe].description;
+            document.getElementById('recipe-ingredients').innerHTML = recipes[recipe].ingredients;
+            document.getElementById('recipe-steps').innerHTML = recipes[recipe].steps;
+            document.getElementById('recipe-time').innerHTML = recipes[recipe].times;
+            document.getElementById('recipe-serving-size').innerHTML = recipes[recipe].yield;
+            document.getElementById('recipe-nutrition').innerHTML = recipes[recipe].nutrition;
+            document.getElementById('recipe-details').style.display = 'block';
+
+            document.getElementById('recipe-details').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.onscroll = function() {
+            var scrollTopButton = document.getElementById('scroll-top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollTopButton.classList.add('show');
+            } else {
+                scrollTopButton.classList.remove('show');
+            }
+        };
+    </script>
+    
+</head>
+<body>
+        <nav>
+            <div class="main-page-logo">
+                <a href="../Main/main.html"><img src="../Meal/breakfastimg/Menu.jpeg" height="120px" width="220px" alt=""
+                        class="logo"> </a>
+            </div>
+            <ul>
+                <li><a href="../Meal/breakfast.html">Breakfast 🍳</a></li>
+                <li><a href="../Meal/lunch.html">Lunch 🍔</a></li>
+                <li><a href="../Meal/dinner.html">Dinner 🍝</a></li>
+            </ul>
+            <a href="../Main/AboutUs.html"> <button class="nav-btn">About Us <img src="../Meal/breakfastimg/arrow-white.png"
+                alt=""></button></a>
+        </nav>
+        <section id="screen">
+            <div class="screen container">
+              <div>
+                <h1>Dinner <span></span></h1>
+                <br><br><br>
+                <h3>End Your Day with the Perfect Dinner! Unwind and savor the evening with our collection of dinner recipes, designed to make your nights as comforting as they are flavorful.<span></span></h3>
+              </div>
+            </div>
+          </section>
+    <main>
+        <h1>Explore Your Dinner!</h1><br>
+        <section class="recipe-grid">
+            <div class="recipe-card" onclick="showRecipe('ChickenStirFry')">
+                <img src="dinnerimg/chickenstirfry.avif" alt="Chicken Stir-Fry">
+                <h3>Chicken Stir-Fry</h3>
+                <p>A stir fry is our go-to weeknight dinner when we just don’t have the energy to spend a long time in the kitchen</p>
+                <p>Times: ⏱️ 30 mins</p>
+                <p>Dificulty: ⭐⭐⭐</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('IndianButterChickpeas')">
+                <img src="dinnerimg/indianbutterchickpeas.avif" alt="Indian Butter Chickpeas">
+                <h3>Indian Butter Chickpeas</h3>
+                <p>Looking for your new favorite way to dress up canned chickpeas?</p>
+                <p>Times: ⏱️ 40 mins</p>
+                <p>Dificulty: ⭐⭐⭐</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('BBQPulledMushrooms')">
+                <img src="dinnerimg/bbqpulledmushrooms.avif" alt="BBQ Pulled Mushrooms">
+                <h3>BBQ Pulled Mushrooms</h3>
+                <p>Chewy, sticky, and satisfyingly meaty without any of the meat.</p>
+                <p>Times: ⏱️ 40 mins</p>
+                <p>Dificulty: ⭐⭐⭐⭐</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('CrispySheetPanBlackBeanTacos')">
+                <img src="dinnerimg/crispysheetpanblackbeantacos.avif" alt="Crispy Sheet-Pan Black Bean Tacos">
+                <h3>Crispy Sheet-Pan Black Bean Tacos</h3>
+                <p>Tacos always bring party vibes, but when they’re baked until crisp and rimmed with crunchy cheesy frico.</p>
+                <p>Times: ⏱️ 45 mins</p>
+                <p>Dificulty: ⭐⭐</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('SkilletEggplantParm')">
+                <img src="dinnerimg/skilleteggplantparm.avif" alt="Skillet Eggplant Parm">
+                <h3>Skillet Eggplant Parm</h3>
+                <p>This dish has all the eggplant Parm flavors you love.</p>
+                <p>Times: ⏱️ 55 mins</p>
+                <p>Dificulty: ⭐⭐⭐</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('TacoSpaghetti')">
+                <img src="dinnerimg/tacospaghetti.avif" alt="Taco Spaghetti">
+                <h3>Taco Spaghetti</h3>
+                <p>One-pot taco spaghetti is a fast-as-can-be weeknight dinner</p>
+                <p>Times: ⏱️ 40 mins</p>
+                <p>Dificulty: ⭐⭐</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('PizzaFrittata')">
+                <img src="dinnerimg/pizzafrittata.avif" alt="Pizza Frittata">
+                <h3>Pizza Frittata</h3>
+                <p>TWe loaded this frittata up with marinara, shredded mozzarella, and sliced pepperoni for savory pizza flavor in the classic frittata form.</p>
+                <p>Times: ⏱️ 30 mins </p>
+                <p>Dificulty: ⭐⭐⭐</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('ChickenFajitas')">
+                <img src="dinnerimg/chickenfajitas.avif" alt="Chicken Fajitas">
+                <h3>Chicken Fajitas</h3>
+                <p>Focusing on only 3 key ingredients, our chicken fajita recipe requires minimal prep and cook time, meaning dinner on the table FAST.</p>
+                <p>Times: ⏱️ 1 hr</p> 
+                <p>Dificulty: ⭐⭐⭐⭐</p>
+            </div>
+        </section>
+        <script src="../Meal/meal.js"></script>
+        <section id="recipe-details" style="display: none;">
+            <h2 id="recipe-title"></h2>
+            <p id="recipe-difficulty"></p>
+            <img id="recipe-img" src="" alt="">
+            <p id="recipe-description"></p>
+            <div class="recipe-info">
+                <div class="info-card">
+                    <h3>Ingredients</h3>
+                    <div id="recipe-ingredients"></div>
+                </div>
+                <div class="info-card">
+                    <h3>Steps</h3>
+                    <div id="recipe-steps"></div>
+                </div>    
+                <div class="info-card">
+                    <h3>Time Needed</h3>
+                    <p id="recipe-time"></p>
+                </div>
+                <div class="info-card">
+                    <h3>Yield</h3>
+                    <p id="recipe-serving-size"></p>
+                </div>
+                <div class="info-card">
+                    <h3>Nutritional Information</h3>
+                    <p id="recipe-nutrition"></p>
+                </div>
+
+            </div>
+        </section>
+        <section id="contact">
+            <div class="contact container">
+              <div>
+                <br><br><br>
+                <h1 class="section-title">Contact info</h1>
+              </div>
+              <div class="contact-items">
+                <div class="contact-item">
+                  <div class="icon"><img src="../Meal/breakfastimg/phone.webp" /></div>
+                  <div class="contact-info">
+                    <h1>Phone</h1>
+                    <h2>05-468-8888 (Kampar)</h2>
+                    <h2>03-9086-0288 (Sungai Long)</h2>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="icon"><img src="../Meal/breakfastimg/emailnew.webp" /></div>
+                  <div class="contact-info">
+                    <h1>Email</h1>
+                    <h2>keeweichuan8@1utar.my</h2>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="icon"><img src="../Meal/breakfastimg/address.png" /></div>
+                  <div class="contact-info">
+                    <h1>Address</h1>
+                    <a href="https://www.google.com/maps?q=UTAR+Kampar+Campus+Jalan+Universiti,+Bandar+Barat+31900,+Kampar,+Perak"
+                      target="_blank">
+                      <h2>UTAR Kampar Campus Jalan Universiti, Bandar Barat 31900, Kampar, Perak</h2>
+                    </a>
+                    <a href="https://www.google.com/maps?q=UTAR+Sungai+Long+Campus+Jalan+Sungai+Long,+Bandar+Sungai+Long+Cheras+43000,+Kajang,+Selangor"
+                      target="_blank">
+                      <h2>UTAR Sungai Long Campus Jalan Sungai Long, Bandar Sungai Long Cheras 43000, Kajang, Selangor</h2>
+                    </a>
+                  </div>
+                </div>
+              </div>
+        
+              <a href="https://www.google.com/maps/dir/?api=1&destination=4.3348363,101.1351317" target="_blank"
+                style="font-size: 24px;">Get Directions</a><br><br><br>
+        </section>
+        <section id="footer">
+            <div class="footer container">
+              <h2>Done by Kee Wei Chuan</h2>
+              <div class="social-icon">
+                <div class="social-item">
+                  <a href="https://www.facebook.com"><img
+                      src="https://img.icons8.com/bubbles/100/000000/facebook-new.png" /></a>
+                </div>
+                <div class="social-item">
+                  <a href="https://www.instagram.com"><img
+                      src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+                </div>
+        
+              </div>
+              <p>Copyright © 2024 Malaysia !
+            </div> All rights reserved</p>
+            </div>
+            <div id="cookieConsentBanner" class="cookie-consent-banner">
+                <div class="cookie-content">
+                    <p>We use cookies 🍪</p>
+                    <p>We use cookies to ensure you have the best browsing experience on our website. By using our site, you
+                        acknowledge that you have read and understood our hardwork.</p>
+                    <div class="cookie-buttons">
+                        <button id="accept">Accept</button>
+                        <button id="decline">Decline</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <button id="scroll-top" onclick="scrollToTop()">Back To Top</button>
+    </main>
+</body>
+</html>

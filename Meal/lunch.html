@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunch</title>
+    <link rel="stylesheet" href="lunchstyle.css">
+    <link rel="icon" href="../logo_header/logo_white.png" type="image/x-icon">
+    <script>
+        function showRecipe(recipe) {
+            const recipes = {
+                CreamyPeanutLimeChickenWithNoodles: {
+                    title: 'Creamy Peanut-Lime Chicken With Noodles',
+                    img: 'lunchimg/creamypeanutlimechickennoodles.avif',
+                    description: 'Who can resist rice noodles bathed in an abundance of sweet and creamy peanut sauce? Plus, these noodles are easier to make at home than one might think. The trick is getting everything in order before starting to cook. This means that the prep actually takes longer than the cooking: Make the peanut-lime sauce. Soak the noodles. Chop all of the vegetables and chop the chicken. Pick and wash your herbs and chop your peanuts. With all of this behind you, the dish comes together in a snap!',
+                    difficulty: '⭐⭐⭐⭐',
+                    ingredients: `
+                        <ul>
+                            <li>8 oz. thick rice noodles</li>
+                            <li>1/2 c. no-sugar-added creamy peanut butter</li>
+                            <li>3 Tbsp. sweet chili sauce</li>
+                            <li>2 Tbsp. tamari or soy sauce</li>
+                            <li>31 Tbsp. sriracha</li>
+                            <li>3/4 tsp. cumin seeds</li>
+                            <li>1/2 tsp. finely grated lime zest</li>
+                            <li>2 Tbsp. fresh lime juice</li>
+                            <li>2 Tbsp. vegetable or canola oil</li>
+                            <li>1 large boneless, skinless chicken breasts</li>
+                            <li>1 small red bell pepper</li>
+                            <li>3 cloves garlic</li>
+                            <li>3 scallions</li>
+                            <li>2 Tbsp. finely chopped peeled ginger</li>
+                            <li>1/2 c. fresh cilantro leaves</li>
+                            <li>1/2 c. small fresh basil leaves</li>
+                            <li>1/3 c. roasted salted peanut</li>
+                            <li>Lime wedges, for serving</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Bring a medium pot of water to a boil; generously season with salt. Add noodles and stir to prevent sticking. Remove from heat and let soak until tender, 13 to 15 minutes. Drain in a colander and rinse with cold water.</li>
+                            <li>Meanwhile, in a medium bowl, whisk peanut butter, chili sauce, tamari, sriracha, lime zest, lime juice, 1/4 teaspoon salt, and 1/4 cup warm water until smooth; set aside.</li>
+                            <li>In a large skillet over medium-high heat, heat oil. Add chicken, season with salt, and cook, stirring often, until lightly golden in spots and almost cooked through, about 4 minutes.</li>
+                            <li>Add bell pepper, garlic, white scallion parts, and ginger; season with salt, if needed. Reduce heat to medium and cook, stirring often, until peppers are tender, about 3 minutes more.</li>
+                            <li>Add noodles to pan and toss well to combine. Remove from heat and add reserved sauce. Toss to coat in sauce.</li>
+                            <li>Divide noodles among bowls. Top with green scallion parts, cilantro, basil, and peanuts. Serve with lime wedges alongside.</li>
+                            <li>Serve alongside baked eggs with toast.</li>
+                        </ol>`,
+                    times: '⏱️ 45 mins',
+                    yield: '4 serving',
+                    nutrition: 'Calories: About 634<br>Fat: 32g<br>Cholesterol: 41mg<br>Sodium: 894mg<br>Carbohydrates: 58g<br>Sugar: 7g<br>Protein: 28g<br>Fiber: 5g',
+                },
+                EggRollBowls: {
+                    title: 'Egg Roll Bowls',
+                    img: 'lunchimg/eggrollbowls.avif',
+                    description: 'Whether you’re low-carb, are looking for a creative lunch, or simply want to spice up your weeknight with an easy, budget-friendly lunch, these egg roll bowls are the way to go. ',
+                    difficulty: '⭐⭐⭐',
+                    ingredients: `
+                        <ul>
+                            <li>1 Tbsp. vegetable oil</li>
+                            <li>1 clove garlic</li>
+                            <li>1 Tbsp. minced fresh ginger</li>
+                            <li>1 lb. ground pork</li>
+                            <li>1 Tbsp. toasted sesame oil</li>
+                            <li>1/2 onion</li>
+                            <li>1 c. shredded carrot</li>
+                            <li>1/4 green cabbage</li>
+                            <li>1/4 c. low-sodium soy sauce</li>
+                            <li>1 Tbsp. sriracha</li>
+                            <li>Kosher salt</li>
+                            <li>1 green onion</li>
+                            <li>1 Tbsp. toasted sesame seeds</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>In a large skillet over medium heat, heat vegetable oil. Add garlic and ginger and cook until fragrant, 1 minute.</li>
+                            <li>Add pork and cook, stirring occasionally, until meat is golden in parts and cooked through, 8 to 10 minutes, breaking meat into small pieces with spoon or spatula.</li>
+                            <li>Push pork to the side and add sesame oil. Add onion, carrot, and cabbage. Stir to combine with meat and add soy sauce and sriracha.</li>
+                            <li>Cook until cabbage is tender, 5 to 8 minutes. Season to taste with salt.</li>
+                            <li>Transfer mixture to a serving dish and garnish with scallions and sesame seeds.</li>
+                        </ol>`,
+                    times: '⏱️ 35 mins',
+                    yield: '4 servings',
+                    nutrition: 'Calories: About 404<br>Fat: 32g<br>Cholesterol: 82mg<br>Sodium: 753mg<br>Carbohydrates: 5g<br>Sugar: 2g<br>Protein: 22g<br>Fiber: 2g',
+                },
+                HummusBowlWithSpicedLamb: {
+                    title: 'Hummus Bowl With Spiced Lamb',
+                    img: 'lunchimg/hummusbowlwithspicedlamb.avif',
+                    description: 'For this recipe, creamy hummus is topped with spiced ground lamb, onions, and fresh herbs. It is served with whole wheat pita to scoop up the hummus and toppings (though feel free to skip if you are avoiding bread), and pickled veggies to cut through the richness and add a bright pop of flavor.',
+                    difficulty: '⭐⭐⭐⭐',
+                    ingredients: `
+                        <ul>
+                            <li>2 c. white wine vinegar</li>
+                            <li>1/2 c. granulated sugar</li>
+                            <li>2 Tbsp. kosher salt</li>
+                            <li>1 Tbsp. coriander seeds</li>
+                            <li>1 tsp. ground turmeric</li>
+                            <li>2 carrots</li>
+                            <li>1 jalapeño</li>
+                            <li>4 oz. sweet mini peppers</li>
+                            <li>spiced lamb</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>In a medium saucepan over high heat, bring vinegar, sugar, salt, coriander, turmeric, and 1 cup water to a boil. Remove saucepan from heat.</li>
+                            <li>Stir in onion, carrots, jalapeño, and mini peppers. Let sit, stirring occasionally, at least 30 minutes or up to 1 day.</li>
+                            <li>In a large skillet over medium-high heat, heat oil. Add lamb and onion; season with salt and pepper. Cook, breaking lamb up into large pieces, until lamb is well browned and cooked through, 8 to 10 minutes.</li>
+                            <li>Add garlic and baharat and cook, stirring, until fragrant, about 1 minute more; season with salt and pepper, if needed.</li>
+                            <li>Divide hummus between shallow bowls. Top with lamb and cilantro. Serve with pita and pickles alongside.</li>
+                        </ol>`,
+                    times: '⏱️ 1 hr',
+                    yield: '4 serving',
+                    nutrition: 'Calories: About 896<br>Fat: 43g<br>Cholesterol: 83mg<br>Sodium: 1300mg<br>Carbohydrates: 80g<br>Sugar: 32g<br>Protein: 32g',
+                },
+                ChickenandBroccoli: {
+                    title: 'Chicken & Broccoli',
+                    img: 'lunchimg/chickenandbroccoli.avif',
+                    description: 'This fast and easy one-pot chicken and broccoli is coated in a sweet and savory sauce with plenty of ginger and garlic for a weeknight lunch that beats take-out any day of the week.',
+                    difficulty: '⭐⭐⭐',
+                    ingredients: `
+                        <ul>
+                            <li>1/2 c. low-sodium chicken broth</li>
+                            <li>1/3 c. reduced-sodium soy sauce</li>
+                            <li>3 cloves garlic, finely chopped</li>
+                            <li>3 Tbsp. honey</li>
+                            <li>2 Tbsp. cornstarch</li>
+                            <li>1 Tbsp. finely grated peeled ginger</li>
+                            <li>2 tsp. toasted sesame oil</li>
+                            <li>1 Tbsp. neutral oi</li>
+                            <li>1 lb. boneless, skinless chicken thighs or breasts</li>
+                            <li>2 medium heads broccoli</li>
+                            <li>Cooked brown or white rice and toasted sesame seeds, for serving</li>
+
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>In a small bowl, whisk broth, soy sauce, garlic, honey, cornstarch, ginger, and sesame oil until cornstarch is dissolved.</li>
+                            <li>In a large skillet or wok over high heat, heat neutral oil. Cook chicken, undisturbed, until it easily releases from pan, 1 to 2 minutes. Stir and continue to cook, stirring occasionally, until golden brown on all sides and just cooked through, about 5 minutes more. Transfer to a plate.</li>
+                            <li>In same skillet over medium-low heat, toss broccoli in broth mixture. Cover skillet and let broccoli steam until crisp-tender, 2 to 3 minutes.</li>
+                            <li>Uncover and return chicken and any accumulated juices to skillet. Cook, stirring, until sauce is thickened and chicken and broccoli are well coated, 1 to 2 minutes more.</li>
+                            <li>Divide rice among plates or bowls. Spoon stir-fry over. Top with sesame seeds.</li>
+                        </ol>`,
+                    times: '⏱️ 20 mins',
+                    yield: '4-6 servings ',
+                    nutrition: 'Calories: About251<br>Fat: 8g<br>Cholesterol: 71mg<br>Sodium: 655mg<br>Carbohydrates: 21g<br>Sugar: 12g<br>Protein: 2g<br>Fiber: 5g',
+                },
+                PhillyCheesesteakLettuceWraps: {
+                    title: 'Philly Cheesesteak Lettuce Wraps',
+                    img: 'lunchimg/phillycheesesteaklettucewraps.avif',
+                    description: 'Whether you are going low-carb, looking for an easy game day appetizer, or need a meal-prep dream, these Philly Cheesesteak wraps are here to save the day. Packed with all your favorite components from the classic sandwich—tender skirt steak, onions, peppers, and melty cheese.',
+                    difficulty: '⭐⭐⭐',
+                    ingredients: `
+                        <ul>
+                            <li>2 Tbsp. vegetable oil</li>
+                            <li>1 large onion</li>
+                            <li>2 large bell peppers</li>
+                            <li>1 tsp. dried oregano</li>
+                            <li>Kosher salt</li>
+                            <li>Freshly ground black pepper</li>
+                            <li>1 lb. skirt steak</li>
+                            <li>1 c. shredded provolone</li>
+                            <li>8 large butterhead lettuce leaves</li>
+                            <li>1 Tbsp. freshly chopped parsley</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>In a large skillet over medium heat, heat 1 tablespoon oil. Add onion and bell peppers and season with oregano, salt, and pepper. Cook, stirring often, until vegetables are tender, about 10 minutes. Remove peppers and onions from skillet and heat remaining oil in skillet.</li>
+                            <li>Add steak in a single layer and season with salt and pepper. Cook until steak is seared on one side, about 2 minutes. Flip and cook until the steak is seared on the second side and cooked to your liking, about 2 minutes more for medium.</li>
+                            <li>Add onion mixture back to skillet and toss to combine. Sprinkle provolone over steak and onions then cover skillet with a tight-fitting lid and cook until the cheese has melted, about 1 minute. Remove from heat.</li>
+                            <li>Arrange lettuce on a serving platter. Scoop steak mixture onto each piece of lettuce. Garnish with parsley and serve warm.</li>
+                        </ol>`,
+                    times: '⏱️ 30 mins',
+                    yield: '4 servings',
+                    nutrition: 'Calories: About 446<br>Fat: 31g<br>Cholesterol: 96mg<br>Sodium: 709mg<br>Carbohydrates: 8g<br>Sugar: 6g<br>Protein: 33g',
+                },
+                MediterraneanPastaSalad: {
+                    title: 'Mediterranean Pasta Salad',
+                    img: 'lunchimg/mediterraneanpastasalad.avif',
+                    description: 'Pasta salad is the ultimate side dish blank canvas. You get to pick the noodle shape, mix-ins, and dressing, so it’s not surprising that we have over 50 different recipes for it. This time around, pasta salad gets a Mediterranean twist, showcasing some of my favorite flavors from that corner of the globe.',
+                    difficulty: '⭐⭐',
+                    ingredients: `
+                        <ul>
+                            <li>Kosher salt</li>
+                            <li>8 oz. dried, short pasta, such as gemelli, penne, or bowtie</li>
+                            <li>1 (15-oz.) can chickpeas</li>
+                            <li>1 large red bell pepper, seeds and ribs removed</li>
+                            <li>1 Persian cucumber</li>
+                            <li>2 scallions</li>
+                            <li>3/4 c. crumbled feta </li>
+                            <li>1/2 c. chopped mixed pitted olives and chopped sun-dried tomatoes </li>
+                            <li>1 Tbsp. chopped fresh mint</li>
+                            <li>1 Tbsp. chopped fresh oregano</li>
+                            <li>1 tsp. za’atar seasoning </li>
+                            <li>2 cloves garlic</li>
+                            <li>1/2 c. mayonnaise </li>
+                            <li>3 Tbsp. fresh lemon juice</li>
+                            <li>1 Tbsp. harissa paste</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>In a large pot of boiling salted water, cook pasta, stirring occasionally, until al dente according to package directions. Drain (do not rinse); season with 1/2 teaspoon salt, tossing to distribute. Let cool slightly.</li>
+                            <li>In a large bowl, toss chickpeas, bell pepper, cucumber, scallions, feta, olives, tomatoes, mint, oregano, and za’atar until combined. Fold in pasta.</li>
+                            <li>In a small bowl, whisk garlic, mayonnaise, lemon juice, and harissa. Pour over pasta salad and toss until coated; season with salt, if needed.</li>
+                        </ol>`,
+                    times: '⏱️ 40 mins',
+                    yield: '8-10 servings',
+                    nutrition: 'Calories: About 278<br>Fat: 14g<br>Sodium: 355mg<br>Carbohydrates: 27g<br>Sugar: 4g<br>Protein: 8g<br>Fiber: 5g',
+                },
+                HamandCheeseSandwich: {
+                    title: 'Ham & Cheese Sandwich',
+                    img: 'lunchimg/hamandcheese.avif',
+                    description: 'This ham sandwich is great for many reasons. It is got a beautiful golden crust (thanks mayo!), a quick and simple honey mustard sauce, and briny pickles for crunch. Make it with leftover spiral ham and you are got yourself a prize-winning lunch.',
+                    difficulty: '⭐⭐',
+                    ingredients: `
+                        <ul>
+                            <li>4 slices sourdough bread</li>
+                            <li>2 Tbsp. mayonnaise</li>
+                            <li>2 Tbsp. dijon mustard </li>
+                            <li>2 tsp. honey</li>
+                            <li>6 slices Swiss cheese</li>
+                            <li>6 slices ham</li>
+                            <li>8 slices dill pickle</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Spread one side of each slice of bread with mayonnaise. In a small bowl, stir to combine mustard and honey.</li>
+                            <li>On 2 of the 4 slices, spread the mustard mixture on the opposite side of the mayo. Top with 3 slices of cheese and 3 slices of ham per sandwich. Add 4 slices of pickle each, then top with remaining slice of bread, mayo side out.</li>
+                            <li>Heat a large skillet over medium heat. Add sandwiches and cook until bread is golden and cheese is melted, 3 minutes per side.</li>
+                        </ol>`,
+                    times: '⏱️ 15 mins',
+                    yield: '2 servings',
+                    nutrition: 'Calories: About 1346<br>Fat: 49g<br>Cholesterol: 131mg<br>Sodium: 3174mg<br>Carbohydrates: 151g<br>Sugar: 20g<br>Protein: 67g<br>',
+                },
+                PinwheelSandwiches: {
+                    title: 'Pinwheel Sandwiches',
+                    img: 'lunchimg/pinwheelsandwiches.avif',
+                    description: 'Pinwheel sandwiches are here with their totally retro swirls, ready to be packed into lunchboxes, piled onto game day spreads, or just eaten as an afternoon snack.',
+                    difficulty: '⭐⭐',
+                    ingredients: `
+                        <ul>
+                            <li>3/4 c. mayonnaise</li>
+                            <li>2 Tbsp. ranch seasoning</li>
+                            <li>8 (10") flour tortillas</li>
+                            <li>8 oz. sliced American or cheddar cheese</li>
+                            <li>1 lb. deli-sliced baked ham</li>
+                            <li>1 lb. deli-sliced turkey breast</li>
+                            <li>16 butter lettuce leaves</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>In a small bowl, mix mayonnaise and ranch seasoning.</li>
+                            <li>On a clean surface, lay tortillas flat. Spread each tortilla with 1 tablespoon mayonnaise mixture. Place 2 to 3 slices cheese on bottom two-thirds of each tortilla. Top cheese with ham and turkey. Top meat with 2 to 3 lettuce leaves and tightly roll up.</li>
+                            <li>To serve right away, slice into 1" rounds and arrange on a platter. To make ahead, place seam side down on a baking sheet and refrigerate up to 6 hours. Slice when ready to serve.</li>
+                        </ol>`,
+                    times: '⏱️ 25 mins',
+                    yield: '40 servings',
+                    nutrition: 'Calories: About 119<br>Fat: 8g<br>Sodium: 234mg<br>Carbohydrates: 5g<br>Protein: 6g',
+                }
+            };
+
+            document.getElementById('recipe-title').innerHTML = recipes[recipe].title;
+            document.getElementById('recipe-difficulty').innerHTML = recipes[recipe].difficulty;
+            document.getElementById('recipe-img').src = recipes[recipe].img;
+            document.getElementById('recipe-description').innerHTML = recipes[recipe].description;
+            document.getElementById('recipe-ingredients').innerHTML = recipes[recipe].ingredients;
+            document.getElementById('recipe-steps').innerHTML = recipes[recipe].steps;
+            document.getElementById('recipe-time').innerHTML = recipes[recipe].times;
+            document.getElementById('recipe-serving-size').innerHTML = recipes[recipe].yield;
+            document.getElementById('recipe-nutrition').innerHTML = recipes[recipe].nutrition;
+            document.getElementById('recipe-details').style.display = 'block';
+
+            document.getElementById('recipe-details').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.onscroll = function() {
+            var scrollTopButton = document.getElementById('scroll-top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollTopButton.classList.add('show');
+            } else {
+                scrollTopButton.classList.remove('show');
+            }
+        };
+
+    </script>
+    
+</head>
+<body>
+        <nav>
+            <div class="main-page-logo">
+                <a href="../Main/main.html"><img src="../Meal/breakfastimg/Menu.jpeg" height="120px" width="220px" alt=""
+                        class="logo"> </a>
+            </div>
+            <ul>
+                <li><a href="../Meal/breakfast.html">Breakfast 🍳</a></li>
+                <li><a href="../Meal/lunch.html">Lunch 🍔</a></li>
+                <li><a href="../Meal/dinner.html">Dinner 🍝</a></li>
+            </ul>
+            <a href="../Main/AboutUs.html"> <button class="nav-btn">About Us <img src="../Meal/breakfastimg/arrow-white.png"
+                alt=""></button></a>
+        </nav>
+        <section id="screen">
+            <div class="screen container">
+              <div>
+                <h1>Lunch <span></span></h1>
+                <br><br><br>
+                <h3>It's Lunchtime! Whether you're looking for a light bite, a quick meal to keep you energized through the day, or a hearty dish to indulge in, our collection of lunch recipes has something for everyone.<span></span></h3>
+              </div>
+            </div>
+          </section>
+    <main>
+        <h1>Explore Your Lunch!</h1><br>
+        <section class="recipe-grid">
+            <div class="recipe-card" onclick="showRecipe('CreamyPeanutLimeChickenWithNoodles')">
+                <img src="lunchimg/creamypeanutlimechickennoodles.avif" alt="Creamy Peanut Lime Chicken With Noodles">
+                <h3>Creamy Peanut-Lime Chicken With Noodles</h3>
+                <p>Who can resist rice noodles bathed in an abundance of sweet and creamy peanut sauce?</p>
+                <p>Times: ⏱️ 45 mins</p>
+                <p>Dificulty: ⭐⭐⭐⭐</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('EggRollBowls')">
+                <img src="lunchimg/eggrollbowls.avif" alt="Egg Roll Bowls">
+                <h3>Egg Roll Bowls</h3>
+                <p>When we’re craving crispy egg rolls but need a more filling lunch option, we turn to these egg roll bowls.</p>
+                <p>Times: ⏱️ 35 mins</p>
+                <p>Dificulty: ⭐⭐⭐</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('HummusBowlWithSpicedLamb')">
+                <img src="lunchimg/hummusbowlwithspicedlamb.avif" alt="Hummus Bowl With Spiced Lamb">
+                <h3>Hummus Bowl With Spiced Lamb</h3>
+                <p>This hummus bowl is an easy and filling meal that comes together rather quickly.</p>
+                <p>Times: ⏱️ 1 hr</p>
+                <p>Dificulty: ⭐⭐⭐⭐</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('ChickenandBroccoli')">
+                <img src="lunchimg/chickenandbroccoli.avif" alt="Chicken & Broccoli">
+                <h3>Chicken & Broccoli</h3>
+                <p>This fast and easy one-pot chicken and broccoli is coated in a sweet and savory sauce</p>
+                <p>Times: ⏱️ 20 mins</p>
+                <p>Dificulty: ⭐⭐⭐</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('PhillyCheesesteakLettuceWraps')">
+                <img src="lunchimg/phillycheesesteaklettucewraps.avif" alt="Philly Cheesesteak Lettuce Wraps">
+                <h3>Philly Cheesesteak Lettuce Wraps</h3>
+                <p>these Philly Cheesesteak wraps are here to save the day.</p>
+                <p>Times: ⏱️ 30 mins</p>
+                <p>Dificulty: ⭐⭐⭐</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('MediterraneanPastaSalad')">
+                <img src="lunchimg/mediterraneanpastasalad.avif" alt="Mediterranean Pasta Salad">
+                <h3>Mediterranean Pasta Salad</h3>
+                <p>pasta salad gets a Mediterranean twist, showcasing some of my favorite flavors</p>
+                <p>Times: ⏱️ 40 mins</p>
+                <p>Dificulty: ⭐⭐</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('HamandCheeseSandwich')">
+                <img src="lunchimg/hamandcheese.avif" alt="Ham & Cheese Sandwich">
+                <h3>Ham & Cheese Sandwich</h3>
+                <p>This ham sandwich is great for many reasons.</p>
+                <p>Times: ⏱️ 15 mins </p>
+                <p>Dificulty: ⭐⭐</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('PinwheelSandwiches')">
+                <img src="lunchimg/pinwheelsandwiches.avif" alt="Pinwheel Sandwiches">
+                <h3>Pinwheel Sandwiches</h3>
+                <p>Pinwheel sandwiches are here with their totally retro swirls, ready to be packed into lunchboxes</p>
+                <p>Times: ⏱️ 25 mins</p> 
+                <p>Dificulty: ⭐⭐</p>
+            </div>
+        </section>
+        <script src="../Meal/meal.js"></script>
+        <section id="recipe-details" style="display: none;">
+            <h2 id="recipe-title"></h2>
+            <p id="recipe-difficulty"></p>
+            <img id="recipe-img" src="" alt="">
+            <p id="recipe-description"></p>
+            <div class="recipe-info">
+                <div class="info-card">
+                    <h3>Ingredients</h3>
+                    <div id="recipe-ingredients"></div>
+                </div>
+                <div class="info-card">
+                    <h3>Steps</h3>
+                    <div id="recipe-steps"></div>
+                </div>    
+                <div class="info-card">
+                    <h3>Time Needed</h3>
+                    <p id="recipe-time"></p>
+                </div>
+                <div class="info-card">
+                    <h3>Yield</h3>
+                    <p id="recipe-serving-size"></p>
+                </div>
+                <div class="info-card">
+                    <h3>Nutritional Information</h3>
+                    <p id="recipe-nutrition"></p>
+                </div>
+
+            </div>
+        </section>
+        <section id="contact">
+            <div class="contact container">
+              <div>
+                <br><br><br>
+                <h1 class="section-title">Contact info</h1>
+              </div>
+              <div class="contact-items">
+                <div class="contact-item">
+                  <div class="icon"><img src="../Meal/breakfastimg/phone.webp" /></div>
+                  <div class="contact-info">
+                    <h1>Phone</h1>
+                    <h2>05-468-8888 (Kampar)</h2>
+                    <h2>03-9086-0288 (Sungai Long)</h2>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="icon"><img src="../Meal/breakfastimg/emailnew.webp" /></div>
+                  <div class="contact-info">
+                    <h1>Email</h1>
+                    <h2>keeweichuan8@1utar.my</h2>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="icon"><img src="../Meal/breakfastimg/address.png" /></div>
+                  <div class="contact-info">
+                    <h1>Address</h1>
+                    <a href="https://www.google.com/maps?q=UTAR+Kampar+Campus+Jalan+Universiti,+Bandar+Barat+31900,+Kampar,+Perak"
+                      target="_blank">
+                      <h2>UTAR Kampar Campus Jalan Universiti, Bandar Barat 31900, Kampar, Perak</h2>
+                    </a>
+                    <a href="https://www.google.com/maps?q=UTAR+Sungai+Long+Campus+Jalan+Sungai+Long,+Bandar+Sungai+Long+Cheras+43000,+Kajang,+Selangor"
+                      target="_blank">
+                      <h2>UTAR Sungai Long Campus Jalan Sungai Long, Bandar Sungai Long Cheras 43000, Kajang, Selangor</h2>
+                    </a>
+                  </div>
+                </div>
+              </div>
+        
+              <a href="https://www.google.com/maps/dir/?api=1&destination=4.3348363,101.1351317" target="_blank"
+                style="font-size: 24px;">Get Directions</a><br><br><br>
+        </section>
+        <section id="footer">
+            <div class="footer container">
+              <h2>Done by Kee Wei Chuan</h2>
+              <div class="social-icon">
+                <div class="social-item">
+                  <a href="https://www.facebook.com"><img
+                      src="https://img.icons8.com/bubbles/100/000000/facebook-new.png" /></a>
+                </div>
+                <div class="social-item">
+                  <a href="https://www.instagram.com"><img
+                      src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+                </div>
+        
+              </div>
+              <p>Copyright © 2024 Malaysia !
+            </div> All rights reserved</p>
+            </div>
+            <div id="cookieConsentBanner" class="cookie-consent-banner">
+                <div class="cookie-content">
+                    <p>We use cookies 🍪</p>
+                    <p>We use cookies to ensure you have the best browsing experience on our website. By using our site, you
+                        acknowledge that you have read and understood our hardwork.</p>
+                    <div class="cookie-buttons">
+                        <button id="accept">Accept</button>
+                        <button id="decline">Decline</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <button id="scroll-top" onclick="scrollToTop()">Back To Top</button>
+    </main>
+</body>
+</html>

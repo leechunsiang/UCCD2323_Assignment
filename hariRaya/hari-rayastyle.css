@@ -1,0 +1,551 @@
+/* Initial state for the animations */
+.recipe-section {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  padding: 20px;
+}
+
+/* When the section is in view, apply the animation */
+.recipe-section.fade-in {
+  animation: fadeIn 1s forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+
+body {
+  background: 
+      linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0.454)); /* White color overlay */
+      /* url('images/cnybackground2.png'); /* Background image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Banner Section */
+.banner {
+  background-image: url('hariRayaImg/harirayabackground.png');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 15px 0px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.382); /* Shadow effect */
+}
+
+.banner h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.recipe-section img {
+  width: 50%; /* Set the width to 80% of the container */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensures the image covers the designated area */
+  border-radius: 8px;
+  margin: 0 auto 15px auto; /* Center the image and add space below */
+  display: block; /* Ensures image behaves as a block element */
+}
+
+.recipe-section h1 {
+  color: #000000;
+  text-decoration-line: underline;
+  text-decoration-color: #1fff53;
+  text-underline-offset: 10px;
+}
+
+.container {
+  padding: 30px;
+}
+
+.recipe-content {
+  padding: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-size:15px;
+  display: flex;
+  gap: 30px; /* Adds space between the image section and details section */
+  background-color: rgb(250, 255, 240);
+  border-radius: 20px;
+  align-items: flex-start; /* Aligns the items at the top */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-image {
+  max-width: 500px; /* Set a max width for the image container */
+}
+
+.recipe-image img {
+  width: 100%;
+  box-shadow:  0 6px 20px rgba(0, 0, 0, 0.1); /* Regular shadow */
+  border: solid;
+  height: auto;
+  object-fit: cover;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+
+.recipe-details {
+  flex: 1; /* The details section takes up the remaining space */
+}
+
+.recipe-details h3 {
+  margin-top: 0; /* Ensure there’s no extra space above the headers */
+}
+
+.description {
+  text-align: center; /* Center the description text */
+  font-style: italic; /* Add some styling to differentiate it */
+  margin-top: 10px;
+  color: #575757;
+}
+
+nav {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Align items to the start (left) */
+  background-color: rgba(254, 244, 232, 0); /* Optional: set a background color */
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.nav ul li {
+  margin: 0 10px;
+  position: relative;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  font-weight: normal;
+  color: #2e2e2e;
+  font-family: Arial, sans-serif;
+}
+
+.nav ul li a:hover {
+  color: #de0000;
+}
+
+.nav ul li:not(:last-child) {
+  position: relative;
+  padding-right: 25px; /* Adjust space after each link */
+}
+
+.nav ul li:not(:last-child)::after {
+  content: '';
+  display: inline-block;
+  background-image: url('hariRayaImg/ketupat2.png'); /* Path to your image */
+  background-size: contain;
+  width: 15px; /* Width of the image */
+  height: 14px; /* Height of the image */
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav a {
+  text-decoration: none;
+  font-weight:100;
+  color: #2e2e2e; /* Color for the links */
+  font-family: Arial, sans-serif; /* Font style */
+}
+
+.nav a:hover {
+  color: #ff6c6c; /* Changes color on hover */
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #ffffff;
+}
+
+h2 {
+  color: rgb(6, 75, 0);
+  text-decoration:underline;
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+}
+
+h1 {
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+#scroll-top {
+  display: none; /* Initially hidden */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  background-color: #000000; /* Background color of the button */
+  color: white; /* Text color */
+  border-radius: 20px; /* Rounded corners */
+  cursor: pointer;
+  z-index: 1000; /* Ensure the button appears above other elements */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a shadow for better visibility */
+  opacity: 0; /* Start with the button fully transparent */
+  transition: opacity 0.5s ease-in-out; /* Add a transition for the fade-in effect */
+}
+
+#scroll-top.show {
+  display: block;
+  opacity: 1; /* Fully opaque when visible */
+}
+
+#scroll-top:hover {
+  background-color: #ff4b4b; /* Darker shade on hover */
+}
+
+/* Header Container */
+.header-container {
+  display: flex;
+  align-items: left;
+  justify-content: left; /* Center all content inside the header */
+  background-color: #ffffff;
+  padding: 0px 0;
+  position: relative;
+}
+
+header h1 {
+  color: white; /* Or any other color */
+  font-size: 24px;
+  margin: 0;
+  font-family: 'Your Desired Font', sans-serif; /* Choose a font that fits your design */
+}
+
+.header-logo {
+  
+  height: 40px; /* Adjust the size of the logo */
+  margin-right: 10px; /* Space between the logo and the title */
+}
+
+/* Logo Image */
+.logo-container {
+  text-align: left;
+}
+
+.logo {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  max-width: 150px; /* Size of the logo */
+  height: 50px;
+}
+
+
+/* Header Container */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0;
+  background-color: #ffffff;
+  overflow: visible;
+  z-index: 1;
+}
+
+
+/* Home Link */
+.home-link {
+  position: absolute;
+  left: 70px; /* Position the home link to the far left */
+}
+
+.home-link a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  font-family: Arial, sans-serif;
+}
+
+
+.home-link img {
+  width: 40px; /* Adjust size as needed */
+  height: auto;
+  cursor: pointer; /* Change cursor to indicate it's clickable */
+}
+
+.home-link a:hover {
+  color: #007bff;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  right: 230px;
+}
+
+/* General dropdown styling */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border-radius: 30px;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(-20px); /* Initially moved up */
+  animation: dropdownFadeIn 0.5s ease forwards; /* Apply the animation */
+}
+
+
+/* Apply different delays to each item */
+.dropdown-content a:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.dropdown-content a:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dropdown-content a:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  border-radius: 30px;
+}
+
+/* Dropdown hover behavior */
+.dropdown:hover .dropdown-content,
+.login-dropdown:hover .dropdown-content {
+  display: block; /* Make dropdown visible on hover */
+}
+
+.dropdown:hover .main-category,
+.login-dropdown:hover .main-category {
+  color: #007bff; /* Change color on hover */
+}
+
+.main-category {
+  color: #131313;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 0px;
+  cursor: pointer;
+}
+
+/* Container for the logo and dropdown */
+.login-dropdown {
+  position: relative;
+  display: inline-block;
+  left: 500px;
+}
+
+/* Style for the logo */
+.login-dropdown .logo {
+  width: 50px; /* Adjust size as needed */
+  height: auto;
+  cursor: pointer;
+}
+
+/* Dropdown content */
+.login-dropdown .dropdown-content {
+  display: none; /* Hidden by default */
+  position: absolute;
+  background-color: white;
+  border-radius: 20px;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0; /* Aligns the dropdown to the right edge of the logo */
+}
+
+/* Links inside the dropdown */
+.login-dropdown .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+}
+
+/* Change color on hover */
+.login-dropdown .dropdown-content a:hover {
+  background-color: #ddd;
+  border-radius: 20px;
+}
+
+/* Show the dropdown menu when hovering over the logo */
+.login-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.login-dropdown img{
+  width: 40px;
+}
+
+/* Initial state for the header and banner */
+.header-container, .banner {
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide-in effects for the recipe sections */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Apply slide-in effect when section is in view */
+.recipe-section.fade-in-left {
+  animation: slideInLeft 1s forwards;
+}
+
+.recipe-section.fade-in-right {
+  animation: slideInRight 1s forwards;
+}
+
+/* Hover effect for images */
+.recipe-image img:hover {
+  transform: scale(1.1); /* Slightly enlarges the image */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Fade-in from left animation */
+@keyframes fadeInLeft {
+  from {
+      opacity: 0;
+      transform: translateX(-100%);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+/* Fade-in from right animation */
+@keyframes fadeInRight {
+  from {
+      opacity: 0;
+      transform: translateX(100%);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+/* Applying animations */
+.fade-in-left {
+  animation: fadeInLeft 1s ease forwards;
+}
+
+.fade-in-right {
+  animation: fadeInRight 1s ease forwards;
+}
+
+@keyframes bannerAnimation {
+  0% {
+    transform: scale(1);
+    color: #ffffff;
+  }
+  50% {
+    transform: scale(1.1);
+    color: #ff7e23;
+  }
+  100% {
+    transform: scale(1);
+    color: #ffffff;
+  }
+}
+
+.banner h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: bannerAnimation 3s ease-in-out infinite;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px); /* Move up slightly */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Move back to original position */
+  }
+}
+
+.banner h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  animation: textShadowPulse 2s infinite ease-in-out;
+}
+
+@keyframes textShadowPulse {
+  0%, 100% {
+      text-shadow: 0 0 5px #1fff53, 0 0 10px #1fff53, 0 0 15px #1fff53;
+  }
+  50% {
+      text-shadow: 0 0 10px #1fff53, 0 0 20px #1fff53, 0 0 30px #1fff53;
+  }
+}
+
+.recipe-content {
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2); /* Adjust the values for the desired effect */
+}

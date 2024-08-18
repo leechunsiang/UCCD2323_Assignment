@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese New Year Cuisines</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+SC:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cnystyle.css">
+    <link rel="icon" href="../logo_header/logo_white.png" type="image/x-icon">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.recipe-section');
+
+            const options = {
+                threshold: 0.5,
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.id === 'yu-sheng' || entry.target.id === 'pTart') {
+                            entry.target.classList.add('fade-in-left');
+                        } else {
+                            entry.target.classList.add('fade-in-right');
+                        }
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="home-link">
+            <a href="../Main/main.html">
+                <img src="logo_header/homelogo.png" alt="Home" class="home-icon">
+            </a>
+        </div>
+        <div class="dropdown">
+            <a href="../festivals/festivals.html" class="main-category">Festives &#9662;</a>
+            <div class="dropdown-content">
+                <a href="../cny/CNYfood.html">Chinese New Year</a>
+                <a href="../deepavali/deepavali.html">Deepavali</a>
+                <a href="../hariRaya/hari-raya.html">Hari Raya Aidilfitri</a>
+            </div>
+        </div>
+        <div class="login-dropdown">
+            <img src="logo_header/loginlogo.png" alt="Login" class="login-img">
+            <div class="dropdown-content">
+                <a href="../login/login.html">Log In</a>
+                <a href="../accountDetails/account_details.html">Account Details</a>
+                <a href="#" onclick="logout()">Log Out</a>
+            </div>
+        </div>
+        <div class="logo-container">
+            <img src="logo_header/alimama.png" alt="Logo" class="logo">
+        </div>
+    </div>
+    <div class="banner">
+        <h1>Chinese New Year Cuisines</h1>
+    </div>
+    <!-- Navigation Bar -->
+    <nav class="nav">
+        <ul>
+            <li><a href="#yu-sheng">Yu-Sheng</a></li>
+            <li><a href="#steam-fish">Steam Fish</a></li>
+            <li><a href="#chicken">White Cut Chicken</a></li>
+            <li><a href="#pTart">Pineapple Tart</a></li>
+        </ul>
+    </nav>
+
+    <!-- Recipes -->
+    <div class="container">
+        <section id="yu-sheng" class="recipe-section">
+            <h1>1. 鱼生 Yu-Sheng</h1>
+            <div class="recipe-content">
+
+                <div class="recipe-image">
+                    <img src="cnyimg/Gong-Xi-Fa-Cai-Yee-Sang.jpg" alt="Yu-Sheng">
+                    <p class="description">Dish of raw fish and vegetables, symbolizing prosperity, often tossed for
+                        good luck.</p>
+                </div>
+                <div class="recipe-details">
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <li>Raw Fish (Sashimi-grade)</li>
+                        <li>Shredded Vegetables2</li>
+                        <li>Pickled Vegetables</li>
+                        <li>Crispy Elements</li>
+                        <li>Fresh Herbs</li>
+                        <li>Condiments</li>
+                    </ul>
+                    <h2>Preparation Steps</h2>
+                    <ol>
+                        <li>Prepare the Raw Fish</li>
+                        <li>Shred the Vegetable</li>
+                        <li>Prepare the Crispy Element</li>
+                        <li>Add the Condiments</li>
+                        <li>Toss the Salad</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="steam-fish" class="recipe-section">
+            <h1>2. 清蒸鱼 Steam Fish</h1>
+            <div class="recipe-content">
+
+                <div class="recipe-image">
+                    <img src="cnyimg/fish.png" alt="steam-fish">
+                    <p class="description">Steamed whole fish, garnished with ginger and scallions,
+                        and flavored with soy sauce.</p>
+                </div>
+                <div class="recipe-details">
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <li>Whole Fresh Fish</li>
+                        <li>Ginger - thinly sliced</li>
+                        <li>Scallions</li>
+                        <li>Soy Sauce</li>
+                        <li>Shaoxing Wine - or any rice wine</li>
+                        <li>Vegetable Oil </li>
+                        <li>Salt - to taste</li>
+                    </ul>
+                    <h2>Preparation Steps</h2>
+                    <ol>
+                        <li>Clean and Prepare the Fish</li>
+                        <li>Season the Fish</li>
+                        <li>Set Up for Steaming</li>
+                        <li>Steam the Fishs</li>
+                        <li>Prepare the Sauce</li>
+                        <li>Add Garnishes</li>
+                        <li>Heat the Oil</li>
+                        <li>Pour the warmed soy sauce mixture over the fish</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="chicken" class="recipe-section">
+            <h1>3. 白斩鸡 Steam Chicken</h1>
+            <div class="recipe-content">
+
+                <div class="recipe-image">
+                    <img src="cnyimg/bakzhamgai.png" alt="bakzhamgai">
+                    <p class="description">Steamed whole fish, garnished with ginger and scallions,
+                        and flavored with soy sauce.</p>
+                </div>
+                <div class="recipe-details">
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <li>Whole Fresh Fish</li>
+                        <li>Ginger - thinly sliced</li>
+                        <li>Scallions</li>
+                        <li>Soy Sauce</li>
+                        <li>Shaoxing Wine - or any rice wine</li>
+                        <li>Vegetable Oil </li>
+                        <li>Salt - to taste</li>
+                        <!-- Add more ingredients as needed -->
+                    </ul>
+                    <h2>Preparation Steps</h2>
+                    <ol>
+                        <li>Clean and Prepare the Fish</li>
+                        <li>Season the Fish</li>
+                        <li>Set Up for Steaming</li>
+                        <li>Steam the Fishs</li>
+                        <li>Prepare the Sauce</li>
+                        <li>Add Garnishes</li>
+                        <li>Heat the Oil</li>
+                        <li>Pour the warmed soy sauce mixture over the fish</li>
+                        <!-- Add more steps as needed -->
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="pTart" class="recipe-section">
+            <h1>4. 凤梨酥 Pineapple Tart</h1>
+            <div class="recipe-content">
+
+                <div class="recipe-image">
+                    <img src="cnyimg/pineappleTart.png" alt="pineappleTart">
+                    <p class="description">Steamed whole fish, garnished with ginger and scallions,
+                        and flavored with soy sauce.</p>
+                </div>
+                <div class="recipe-details">
+                    <h2>Ingredients</h2>
+                    <h3>For Pineapple filling</h3>
+                    <ul>
+                        <li>Fresh Pineapple - 500g, peeled and finely chopped</li>
+                        <li>Sugar - 100-150g</li>
+                        <li>Maltose or Corn Syrup - 50g</li>
+                        <li>Lemon Juice - 1 tablespoon</li>
+                    </ul>
+                    <h3>For the Pastry Dough</h3>
+                    <ul>
+                        <li>All-purpose Flour - 250g</li>
+                        <li>Butter - 150g</li>
+                        <li>Powdered Sugar - 50g</li>
+                        <li>Milk Powder - 20g</li>
+                        <li>Egg Yolk - 2 yolks</li>
+                        <li>Vanilla Extract - 1 teaspoon</li>
+                        <li>Salt - a pinch</li>
+                    </ul>
+                    <h2>Preparation Steps</h2>
+                    <h3>Prepare the fillings</h3>
+                    <ol>
+                        <li>Chop the Pineapple</li>
+                        <li>Cook the Filling</li>
+                        <li>Add Maltose or Corn Syrup (Optional)</li>
+                        <li>Cool the Filling</li>
+                    </ol>
+                    <h3>For the pastry dough</h3>
+                    <ol>
+                        <li>Cream the Butter and Sugar</li>
+                        <li>Add the Egg Yolks</li>
+                        <li>Mix in the Dry Ingredients</li>
+                        <li>Chill the Dough</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <button id="scroll-top" onclick="scrollToTop()">TOP</button>
+    <script src="../logout/logout.js"></script>
+</body>
+
+</html>

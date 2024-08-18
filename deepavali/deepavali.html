@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepavali Cuisines</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+SC:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="deepavalistyle.css">
+    <link rel="icon" href="../logo_header/logo_white.png" type="image/x-icon">
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.recipe-section');
+
+            const options = {
+                threshold: 0.5,
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.id === 'yu-sheng' || entry.target.id === 'pTart') {
+                            entry.target.classList.add('fade-in-left');
+                        } else {
+                            entry.target.classList.add('fade-in-right');
+                        }
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</head>
+
+<body>
+       <div class="header-container">
+        <div class="home-link">
+            <a href="../Main/main.html">
+                <img src="logo_header/homelogo.png" alt="Home" class="home-icon">
+            </a>
+        </div>
+        <div class="dropdown">
+            <a href="../festivals/festivals.html" class="main-category">Festives &#9662;</a>
+            <div class="dropdown-content">
+                <a href="../cny/CNYfood.html">Chinese New Year</a>
+                <a href="../deepavali/deepavali.html">Deepavali</a>
+                <a href="../hariRaya/hari-raya.html">Hari Raya Aidilfitri</a>
+            </div>
+        </div>
+        <div class="login-dropdown">
+            <img src="logo_header/loginlogo.png" alt="Login" class="login-img">
+            <div class="dropdown-content">
+                <a href="../login/login.html">Log In</a>
+                <a href="../accountDetails/account_details.html">Account Details</a>
+                <a href="#" onclick="logout()">Log Out</a>
+            </div>
+        </div>
+        <div class="logo-container">
+            <img src="logo_header/alimama.png" alt="Logo" class="logo">
+        </div>
+    </div>
+    <div class="banner">
+        <h1>
+            <span>D</span><span>e</span><span>e</span><span>p</span><span>a</span><span>v</span><span>a</span><span>l</span><span>i</span>
+            <span>&nbsp;</span> <!-- Space between words -->
+            <span>C</span><span>u</span><span>i</span><span>s</span><span>i</span><span>n</span><span>e</span><span>s</span>
+        </h1>
+    </div>
+    <!-- Navigation Bar -->
+    <nav class="nav">
+        <ul>
+            <li><a href="#karanji">Karanji</a></li>
+            <li><a href="#coconut-burfi">Coconut Burfi</a></li>
+            <li><a href="#halwa">Halwa</a></li>
+            <li><a href="#laddoo">Laddoo</a></li>
+        </ul>
+    </nav>
+
+    <!-- Recipes -->
+    <div class="container">
+        <section id="karanji" class="recipe-section">
+            <h1>1. KARANJI</h1>
+            <div class="recipe-content">
+
+                <div class="recipe-image">
+                    <img src="deepavaliImg/karanji.png" alt="karanji">
+                    <p class="description">Karanji is a crispy, deep-fried Indian pastry filled with sweet coconut and
+                        cardamom,
+                        commonly enjoyed during festivals.</p>
+                </div>
+                <div class="recipe-details">
+                    <h2>Ingredients</h2>
+                    <h3>For the dough</h3>
+                    <ul>
+                        <li>1 cup all-purpose flour</li>
+                        <li>2 tablespoons semolina</li>
+                        <li>2 tablespoons ghee</li>
+                        <li>A pinch of salt</li>
+                        <li>Water (as needed)</li>
+                    </ul>
+                    <h3>For the filling</h3>
+                    <ul>
+                        <li>1 cup grated coconut (fresh or desiccated)</li>
+                        <li>1/2 cup powdered sugar</li>
+                        <li>1/4 cup chopped dry fruits (optional)</li>
+                        <li>1/2 teaspoon cardamom powder</li>
+                        <li>1 tablespoon poppy seeds (optional)</li>
+                        <li>1 tablespoon ghee</li>
+                    </ul>
+                    <h2>Preparation Steps</h2>
+                    <ol>
+                        <li>Make the Dough</li>
+                        <li>Prepare the Filling</li>
+                        <li>Assemble the Karanji</li>
+                        <li>Fry the Karanji</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="coconut-burfi" class="recipe-section">
+            <h1>2. Coconut Burfi</h1>
+            <div class="recipe-content">
+
+                <div class="recipe-image">
+                    <img src="deepavaliImg/burfi.png" alt="cocount-burfi">
+                    <p class="description">Coconut burfi is a sweet Indian fudge made from coconut, sugar,
+                        and milk, often flavored with cardamom and garnished with nuts.</p>
+                </div>
+                <div class="recipe-details">
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <li>2 cups grated coconut</li>
+                        <li>1 cup sugar</li>
+                        <li>1/2 cup milk</li>
+                        <li>1/4 cup ghee (clarified butter)</li>
+                        <li>1/2 teaspoon cardamom powder </li>
+                        <li>Chopped nuts for garnish (optional)</li>
+                    </ul>
+                    <h2>Preparation Steps</h2>
+                    <ol>
+                        <li>Cook the Mixture</li>
+                        <li>Thicken the Mixture</li>
+                        <li>Set the Burfi</li>
+                        <li>Cool and Cut</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="halwa" class="recipe-section">
+            <h1>3. Halwa</h1>
+            <div class="recipe-content">
+
+                <div class="recipe-image">
+                    <img src="deepavaliImg/halwa.png" alt="halwa">
+                    <p class="description">Halwa is a rich, sweet Indian dessert made from semolina, flour, or
+                        vegetables,
+                        cooked with ghee, sugar, and flavored with cardamom and nuts.</p>
+                </div>
+                <div class="recipe-details">
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <li>1 cup semolina (sooji) or flour</li>
+                        <li>1/2 cup ghee (clarified butter)</li>
+                        <li>1 cup sugar</li>
+                        <li>1/4 teaspoon cardamom powder</li>
+                        <li>2 cups water</li>
+                        <li>Chopped nuts for garnish (optional)
+                        </li>
+                    </ul>
+                    <h2>Preparation Steps</h2>
+                    <ol>
+                        <li>Roast Semolina</li>
+                        <li>Prepare Sugar Syrup</li>
+                        <li>Combine and Cook</li>
+                        <li>Flavor and Garnish</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="laddoo" class="recipe-section">
+            <h1>4. Laddoo</h1>
+            <div class="recipe-content">
+
+                <div class="recipe-image">
+                    <img src="deepavaliImg/laddoo.png" alt="laddoo">
+                    <p class="description">Laddoo  traditional Indian sweet, shaped into round balls, made from roasted flour, sugar, and ghee,
+                         often flavored with cardamom and garnished with nuts.</p>
+                </div>
+                <div class="recipe-details">
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <li>2 cups gram flour (besan) or semolina (sooji)</li>
+                        <li>1 cup powdered sugar</li>
+                        <li>1/2 cup ghee (clarified butter)</li>
+                        <li>1/4 teaspoon cardamom powder</li>
+                        <li>Chopped nuts for garnish (optional)</li>
+                    </ul>
+                    <h2>Preparation Steps</h2>
+                    <ol>
+                        <li>Roast the Flour</li>
+                        <li>Cool the Mixture</li>
+                        <li>Mix with Sugar</li>
+                        <li>Shape the Laddoos</li>
+                        <li>Cool and Store</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+    <button id="scroll-top" onclick="scrollToTop()">TOP</button>
+    <script src="../logout/logout.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italian Cuisine</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="../logo_header/logo_white.png" type="image/x-icon">
+    <script>
+        function showRecipe(recipe) {
+            const recipes = {
+                calzone: {
+                    title: 'Calzone Pizza',
+                    img: 'Itaimg/calzone_cook.png',
+                    description: 'Traditional Italian folded pizza with cheese, turkey ham, and mushroom.',
+                    ingredients: `
+                        <ul>
+                            <li>Pizza dough</li>
+                            <li>Cheese</li>
+                            <li>Turkey ham</li>
+                            <li>Mushrooms</li>
+                            <li>Tomato sauce</li>
+                            <li>Olive oil</li>
+                            <li>Oregano</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Preheat the oven to 200°C (392°F).</li>
+                            <li>Roll out the pizza dough into a circular shape.</li>
+                            <li>Spread a thin layer of tomato sauce on one half of the dough.</li>
+                            <li>Add cheese, turkey ham, and mushrooms on top of the sauce.</li>
+                            <li>Fold the dough over to cover the filling and seal the edges.</li>
+                            <li>Brush the top with olive oil and sprinkle with oregano.</li>
+                            <li>Bake for 20-25 minutes until golden brown.</li>
+                        </ol>`,
+                    time: 'Preparation Time: 20 minutes<br>Cooking Time: 25 minutes',
+                    servingSize: 'Serves 2',
+                    nutrition: 'Calories: 600 per serving<br>Protein: 25g<br>Carbohydrates: 70g<br>Fat: 25g',
+                    tips: 'For a crispier crust, brush the calzone with egg wash before baking.'
+                },
+                lasagna: {
+                    title: 'Pollo Lasagna',
+                    img: 'Itaimg/pasta_cook.png',
+                    description: 'One of the easy to prepare and delicious baked pasta with chicken and creamy cheese texture.',
+                    ingredients: `
+                        <ul>
+                            <li>Lasagna noodles</li>
+                            <li>Chicken breast</li>
+                            <li>Ricotta cheese</li>
+                            <li>Mozzarella cheese</li>
+                            <li>Parmesan cheese</li>
+                            <li>Marinara sauce</li>
+                            <li>Garlic</li>
+                            <li>Olive oil</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Preheat the oven to 375°F (190°C).</li>
+                            <li>Cook lasagna noodles according to package instructions.</li>
+                            <li>In a skillet, cook chicken breast until no longer pink.</li>
+                            <li>Mix ricotta cheese, mozzarella cheese, and parmesan cheese in a bowl.</li>
+                            <li>Layer noodles, chicken, cheese mixture, and marinara sauce in a baking dish.</li>
+                            <li>Repeat layers, ending with cheese mixture.</li>
+                            <li>Bake for 30-40 minutes until bubbly and golden brown.</li>
+                        </ol>`,
+                    time: 'Preparation Time: 30 minutes<br>Cooking Time: 40 minutes',
+                    servingSize: 'Serves 6',
+                    nutrition: 'Calories: 450 per serving<br>Protein: 30g<br>Carbohydrates: 40g<br>Fat: 20g',
+                    tips: 'Let the lasagna rest for 10 minutes before serving to set the layers.'
+                },
+                risotto: {
+                    title: 'Risotto',
+                    img: 'Itaimg/risotto_cook.png',
+                    description: 'Creamy Italian rice dish cooked with broth and Parmesan cheese.',
+                    ingredients: `
+                        <ul>
+                            <li>Arborio rice</li>
+                            <li>Chicken or vegetable broth</li>
+                            <li>White wine</li>
+                            <li>Onion</li>
+                            <li>Butter</li>
+                            <li>Parmesan cheese</li>
+                            <li>Olive oil</li>
+                            <li>Salt and pepper</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Sauté diced onion in olive oil and butter.</li>
+                            <li>Add Arborio rice and toast for a few minutes.</li>
+                            <li>Pour in white wine and let it absorb.</li>
+                            <li>Gradually add warm broth, stirring constantly.</li>
+                            <li>Cook until rice is creamy and al dente.</li>
+                            <li>Remove from heat and stir in Parmesan cheese.</li>
+                            <li>Season with salt and pepper to taste.</li>
+                        </ol>`,
+                    time: 'Preparation Time: 10 minutes<br>Cooking Time: 25 minutes',
+                    servingSize: 'Serves 4',
+                    nutrition: 'Calories: 350 per serving<br>Protein: 10g<br>Carbohydrates: 45g<br>Fat: 15g',
+                    tips: 'Use warm broth to maintain consistent cooking temperature.'
+                },
+                ossobuco: {
+                    title: 'Ossobuco alla Milanese',
+                    img: 'Itaimg/ossobuco_cook.png',
+                    description: 'Braised veal shanks in a rich white wine and vegetable sauce.',
+                    ingredients: `
+                        <ul>
+                            <li>Veal shanks</li>
+                            <li>Flour</li>
+                            <li>Onion, carrot, and celery</li>
+                            <li>White wine</li>
+                            <li>Beef broth</li>
+                            <li>Tomato paste</li>
+                            <li>Garlic</li>
+                            <li>Lemon zest</li>
+                            <li>Olive oil</li>
+                            <li>Salt and pepper</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Dredge veal shanks in flour and brown in olive oil.</li>
+                            <li>Remove veal and sauté vegetables in the same pot.</li>
+                            <li>Add white wine and let it reduce.</li>
+                            <li>Add beef broth, tomato paste, and return veal to the pot.</li>
+                            <li>Simmer for 2 hours until meat is tender.</li>
+                            <li>Prepare gremolata with garlic and lemon zest.</li>
+                            <li>Serve ossobuco with gremolata on top.</li>
+                        </ol>`,
+                    time: 'Preparation Time: 30 minutes<br>Cooking Time: 2 hours',
+                    servingSize: 'Serves 4',
+                    nutrition: 'Calories: 450 per serving<br>Protein: 35g<br>Carbohydrates: 15g<br>Fat: 25g',
+                    tips: 'Tie the veal shanks with kitchen twine to help them keep their shape during cooking.'
+                },
+                pappa_al_pomodoro: {
+                    title: 'Pappa al Pomodoro',
+                    img: 'Itaimg/pappa_cook.png',
+                    description: 'Tuscan bread soup with tomatoes, garlic, and basil.',
+                    ingredients: `
+                        <ul>
+                            <li>Stale bread</li>
+                            <li>Ripe tomatoes</li>
+                            <li>Garlic</li>
+                            <li>Basil</li>
+                            <li>Vegetable broth</li>
+                            <li>Olive oil</li>
+                            <li>Salt and pepper</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Sauté garlic in olive oil.</li>
+                            <li>Add chopped tomatoes and cook until soft.</li>
+                            <li>Add torn bread and vegetable broth.</li>
+                            <li>Simmer until bread is soft and soup is thick.</li>
+                            <li>Add torn basil leaves.</li>
+                            <li>Season with salt and pepper.</li>
+                            <li>Serve warm with a drizzle of olive oil.</li>
+                        </ol>`,
+                    time: 'Preparation Time: 15 minutes<br>Cooking Time: 30 minutes',
+                    servingSize: 'Serves 4',
+                    nutrition: 'Calories: 250 per serving<br>Protein: 5g<br>Carbohydrates: 35g<br>Fat: 10g',
+                    tips: 'Use very ripe tomatoes for the best flavor.'
+                },
+                aperol_spritz: {
+                    title: 'Aperol Spritz',
+                    img: 'Itaimg/aperol.png',
+                    description: 'Popular Italian aperitif cocktail with Aperol, Prosecco, and soda water.',
+                    ingredients: `
+                        <ul>
+                            <li>Aperol</li>
+                            <li>Prosecco</li>
+                            <li>Soda water</li>
+                            <li>Orange slice</li>
+                            <li>Ice cubes</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Fill a large wine glass with ice cubes.</li>
+                            <li>Pour in 3 parts Prosecco.</li>
+                            <li>Add 2 parts Aperol.</li>
+                            <li>Top with 1 part soda water.</li>
+                            <li>Gently stir to combine.</li>
+                            <li>Garnish with an orange slice.</li>
+                            <li>Serve immediately and enjoy responsibly.</li>
+                        </ol>`,
+                    time: 'Preparation Time: 5 minutes',
+                    servingSize: 'Serves 1',
+                    nutrition: 'Calories: 170 per serving<br>Carbohydrates: 11g<br>Alcohol: 11%',
+                    tips: 'Use chilled Prosecco and Aperol for the best taste.'
+                },
+                limoncello: {
+                    title: 'Limoncello',
+                    img: 'Itaimg/limoncello.png',
+                    description: 'Italian lemon liqueur, traditionally served as an after-dinner digestif.',
+                    ingredients: `
+                        <ul>
+                            <li>Lemons</li>
+                            <li>Vodka or grain alcohol</li>
+                            <li>Sugar</li>
+                            <li>Water</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Peel lemons, avoiding the white pith.</li>
+                            <li>Steep lemon peels in vodka for 1-4 weeks.</li>
+                            <li>Make a simple syrup with sugar and water.</li>
+                            <li>Strain the lemon-infused vodka.</li>
+                            <li>Mix the infused vodka with simple syrup.</li>
+                            <li>Bottle the limoncello.</li>
+                            <li>Chill before serving.</li>
+                        </ol>`,
+                    time: 'Preparation Time: 30 minutes<br>Infusion Time: 1-4 weeks',
+                    servingSize: 'Makes about 33 servings (1 oz each)',
+                    nutrition: 'Calories: 130 per 1 oz serving<br>Carbohydrates: 17g<br>Alcohol: 26%',
+                    tips: 'Use organic lemons for the best flavor and to avoid pesticides.'
+                },
+                bruschetta: {
+                    title: 'Bruschetta',
+                    img: 'Itaimg/bruschetta_cook.png',
+                    description: 'Classic Italian appetizer with toasted bread, fresh tomatoes, garlic, and basil.',
+                    ingredients: `
+                        <ul>
+                            <li>Italian bread or baguette</li>
+                            <li>Ripe tomatoes</li>
+                            <li>Fresh basil</li>
+                            <li>Garlic</li>
+                            <li>Extra virgin olive oil</li>
+                            <li>Balsamic vinegar</li>
+                            <li>Salt and pepper</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Slice bread and toast until golden.</li>
+                            <li>Rub toasted bread with garlic clove.</li>
+                            <li>Dice tomatoes and mix with chopped basil.</li>
+                            <li>Add olive oil, balsamic vinegar, salt, and pepper to tomatoes.</li>
+                            <li>Top bread slices with tomato mixture.</li>
+                            <li>Drizzle with extra olive oil if desired.</li>
+                            <li>Serve immediately.</li>
+                        </ol>`,
+                    time: 'Preparation Time: 15 minutes<br>Cooking Time: 5 minutes',
+                    servingSize: 'Serves 6 as an appetizer',
+                    nutrition: 'Calories: 120 per serving<br>Protein: 3g<br>Carbohydrates: 15g<br>Fat: 6g',
+                    tips: 'Use room temperature tomatoes for the best flavor.'
+                }
+            };
+            localStorage.setItem('selectedRecipe',recipe);
+
+            document.getElementById('recipe-title').innerHTML = recipes[recipe].title;
+            document.getElementById('recipe-img').src = recipes[recipe].img;
+            document.getElementById('recipe-description').innerHTML = recipes[recipe].description;
+            document.getElementById('recipe-ingredients').innerHTML = recipes[recipe].ingredients;
+            document.getElementById('recipe-steps').innerHTML = recipes[recipe].steps;
+            document.getElementById('recipe-time').innerHTML = recipes[recipe].time;
+            document.getElementById('recipe-serving').innerHTML = recipes[recipe].servingSize;
+            document.getElementById('recipe-nutrition').innerHTML = recipes[recipe].nutrition;
+            document.getElementById('recipe-tips').innerHTML = recipes[recipe].tips;
+            document.getElementById('recipe-details').style.display = 'block';
+
+            document.getElementById('recipe-details').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.onscroll = function() {
+            var scrollTopButton = document.getElementById('scroll-top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollTopButton.classList.add('show');
+            } else {
+                scrollTopButton.classList.remove('show');
+            }
+        };
+
+        window.onload = function() {
+        const lastViewedRecipe = localStorage.getItem('selectedRecipe');
+        if (lastViewedRecipe) {
+            showRecipe(lastViewedRecipe);
+        }
+    };
+
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../Main/main.html">Home</a></li>
+                <li><a href="../Country/Italian.html">Italian</a></li>
+                <li><a href="../Country/Japanese.html">Japanese</a></li>
+                <li><a href="../Country/Thai.html">Thailand</a></li>
+            </ul>
+        </nav>
+        <h1>Cucina Italiana <span class="japanese-text">Italian Cuisine</span></h1>
+    </header>
+    <main>
+        <section class="recipe-grid">
+            <div class="recipe-card" onclick="showRecipe('calzone')">
+                <img src="Itaimg/calzone.png" alt="Calzone Pizza">
+                <h3>Calzone Pizza</h3>
+                <p>Traditional Italian folded pizza with cheese, turkey ham, and mushroom.</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('lasagna')">
+                <img src="Itaimg/pasta.png" alt="Pollo Lasagna">
+                <h3>Pollo Lasagna</h3>
+                <p>One of the easy to prepare and delicious baked pasta with chicken and creamy cheese texture.</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('risotto')">
+                <img src="Itaimg/risotto.png" alt="Risotto">
+                <h3>Risotto</h3>
+                <p>Creamy Italian rice dish cooked with broth and Parmesan cheese.</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('ossobuco')">
+                <img src="Itaimg/ossobuco.png" alt="Ossobuco alla Milanese">
+                <h3>Ossobuco alla Milanese</h3>
+                <p>Braised veal shanks in a rich white wine and vegetable sauce.</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('pappa_al_pomodoro')">
+                <img src="Itaimg/pappa.png" alt="Pappa al Pomodoro">
+                <h3>Pappa al Pomodoro</h3>
+                <p>Tuscan bread soup with tomatoes, garlic, and basil.</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('aperol_spritz')">
+                <img src="Itaimg/aperol.png" alt="Aperol Spritz">
+                <h3>Aperol Spritz</h3>
+                <p>Popular Italian aperitif cocktail with Aperol, Prosecco, and soda water.</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('limoncello')">
+                <img src="Itaimg/limoncello.png" alt="Limoncello">
+                <h3>Limoncello</h3>
+                <p>Italian lemon liqueur, traditionally served as an after-dinner digestif.</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('bruschetta')">
+                <img src="Itaimg/bruschetta.png" alt="Bruschetta">
+                <h3>Bruschetta</h3>
+                <p>Classic Italian appetizer with toasted bread, fresh tomatoes, garlic, and basil.</p>
+            </div>
+        </section>
+        <section id="recipe-details" style="display: none;">
+            <h2 id="recipe-title"></h2>
+            <img id="recipe-img" src="" alt="">
+            <p id="recipe-description"></p>
+            <h3>Ingredients</h3>
+            <div id="recipe-ingredients"></div>
+            <h3>Steps</h3>
+            <div id="recipe-steps"></div>
+            <h3>Time Needed</h3>
+            <p id="recipe-time"></p>
+            <h3>Serving Size</h3>
+            <p id="recipe-serving"></p>
+            <h3>Nutritional Information</h3>
+            <p id="recipe-nutrition"></p>
+            <h3>Preparation Tips</h3>
+            <p id="recipe-tips"></p>
+        </section>
+        <button id="scroll-top" onclick="scrollToTop()">Back to Top</button>
+    </main>
+</body>
+</html>

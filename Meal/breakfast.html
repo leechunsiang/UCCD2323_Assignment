@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakfast</title>
+    <link rel="stylesheet" href="bfstyle.css">
+    <link rel="icon" href="../logo_header/logo_white.png" type="image/x-icon">
+    <script src="../Meal/meal.js"></script>
+    <script>
+        function showRecipe(recipe) {
+            const recipes = {
+                TomatoandFetaBakedEggs: {
+                    title: 'Tomato and Feta Baked Eggs',
+                    img: 'breakfastimg/TomatoandFetaBakedEggs.avif',
+                    description: 'Smoky roasted tomatoes, salty feta, and sunny eggs all bake together on a single sheet pan!',
+                    difficulty: '⭐⭐⭐',
+                    ingredients: `
+                        <ul>
+                            <li>S2 pt. pints grape tomatoes</li>
+                            <li>2 Tbsp. olive oil</li>
+                            <li>1/2 tsp. smoked paprika</li>
+                            <li>Kosher salt and pepper</li>
+                            <li>3/4 tsp. coriander seeds</li>
+                            <li>3/4 tsp. cumin seeds</li>
+                            <li>170 g. feta cheese</li>
+                            <li>8 large eggs</li>
+                            <li>1/3 c. basil leaves</li>
+                            <li>1 Tbsp. fresh lemon juice</li>
+                            <li>1 140-g pkg. mixed greens</li>
+                            <li>4 slices country bread</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Heat oven to 230°C. On rimmed baking sheet, toss tomatoes with 1 tablespoon oil, smoked paprika, and 1/2 teaspoon each salt and pepper. Roast until tomatoes start to release liquid and break down, 8 minutes. </li>
+                            <li>Meanwhile, using mortar and pestle, crush coriander and cumin seeds until coarsely ground.</li>
+                            <li>When tomatoes are ready, sprinkle evenly with feta. Using back of spoon, create 8 wells (1 for each egg) in tomatoes, then sprinkle with ground coriander and cumin seeds.</li>
+                            <li>SBake until cheese is slightly melted, 2 to 3 minutes. Crack 1 egg into each well and bake until egg whites are just set, 3 to 5 minutes more. Sprinkle with basil.</li>
+                            <li>Meanwhile, in large bowl, whisk lemon juice with remaining Tbsp oil. Add greens and 1/4 teaspoon each salt and pepper and toss to coat.</li>
+                            <li>Serve alongside baked eggs with toast.</li>
+                        </ol>`,
+                    times: '⏱️ 25 mins',
+                    yield: '4 serving',
+                    nutrition: 'Calories: About 452<br>Fat: 27g<br>Cholesterol: 410mg<br>Sodium: 1117mg<br>Carbohydrates: 4g<br>Sugar: 6g<br>Protein: 24g',
+                },
+                SweetPotatoBreakfastBurritos: {
+                    title: 'Sweet Potato Breakfast Burritos',
+                    img: 'breakfastimg/sweetpotatobreakfastburritos.avif',
+                    description: 'Crack them into these make-ahead breakfast burritos that are perfect for busy mornings. ',
+                    difficulty: '⭐⭐⭐⭐',
+                    ingredients: `
+                        <ul>
+                            <li>2 Tbsp. olive oil,</li>
+                            <li>1 small sweet potato</li>
+                            <li>1 medium onion, chopped </li>
+                            <li>1 poblano pepper, chopped </li>
+                            <li>Kosher salt and pepper</li>
+                            <li>1/4 tsp. chili powder</li>
+                            <li>1 c. canned black beans, rinsed</li>
+                            <li>8 large eggs</li>
+                            <li>85 g Cheddar cheese, coarsely grated (about 1 cup)</li>
+                            <li>3 c. baby kale</li>
+                            <li>6 burrito-size flour tortillas</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Heat 1 tablespoon oil in large skillet on medium. Add sweet potato and cook, stirring occasionally, until beginning to brown, 5 to 6 minutes.</li>
+                            <li>Add 2 tablespoons water, cover, and cook until tender, 2 minutes.</li>
+                            <li>Add onion, poblano, and 1/4 teaspoon each salt and pepper; cover and cook, stirring occasionally, until tender, 3 to 4 minutes.</li>
+                            <li>Stir in chili powder and cook until fragrant, 1 minute. Stir in black beans and remove from heat.</li>
+                            <li>Meanwhile, in bowl, beat eggs with 1/2 teaspoon each salt and pepper. Heat remaining tablespoon oil in large nonstick skillet on medium.</li>
+                            <li>Add eggs and cook, stirring with rubber spatula every few seconds, to desired doneness, 2 to 3 minutes for soft-scrambled eggs. </li>
+                            <li>Divide filling, cheese, and kale among tortillas. For each burrito, fold sides over filling, then roll up from bottom. </li>
+                            <li>If desired, individually wrap burritos with plastic and freeze up to 2 months. </li>
+                        </ol>`,
+                    times: '⏱️ 1 hr 20 mins',
+                    yield: '6 servings',
+                    nutrition: 'Calories: About 455<br>Fat: 21g<br>Cholesterol: 262mg<br>Sodium: 1131mg<br>Carbohydrates: 48g<br>Sugar: 4.5g<br>Protein: 21g<br>Fiber: 5g',
+                },
+                BECBreakfastBites: {
+                    title: 'B.E.C. Breakfast Bites',
+                    img: 'breakfastimg/b-e-c-breakfast-bites.avif',
+                    description: 'Wrap all your favorite breakfast fixings in a Tortilla and griddle until golden for a hearty, handheld breakfast that can’t be beat.',
+                    difficulty: '⭐⭐',
+                    ingredients: `
+                        <ul>
+                            <li>2 hash brown patties</li>
+                            <li>4 Homemade Tortillas or store-bought 20 cm flour tortillas</li>
+                            <li>4 strips bacon, cooked until crispy and broken into pieces</li>
+                            <li>4 large eggs, scrambled</li>
+                            <li>1 oz. extra-sharp Cheddar, coarsely grated (about 1/4 cup) </li>
+                            <li>2 tsp. olive oil</li>
+                            <li>Hot sauce</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Arrange 1 piece hash brown in center of each tortilla; then, dividing evenly, top with bacon, eggs, and cheese.</li>
+                            <li>Tightly wrap tortilla around filling, pleating edges, then place pleated side down. </li>
+                            <li>Heat 1 tsp oil in large nonstick skillet on medium.</li>
+                            <li>Place 2 wraps, pleated sides down, in skillet and cook each, pressing down on wrap and standing sides up as necessary, until entire tortilla is golden brown, about 2 minutes per large sides and 1 minute for smaller sides.</li>
+                            <li>Repeat with remaining oil and wraps. Cut wraps in half and serve with hot sauce if desired.</li>
+                        </ol>`,
+                    times: '⏱️ 35 mins',
+                    yield: '4 serving',
+                    nutrition: 'Calories: About 300<br>Fat: 15g<br>Cholesterol: 188mg<br>Sodium: 800mg<br>Carbohydrates: 40g<br>Sugar: 4.5g<br>Protein: 20g',
+                },
+                ParmesanWaffleswithLemonRicotta: {
+                    title: 'Parmesan Waffles with Lemon Ricotta',
+                    img: 'breakfastimg/ParmesanWaffleswithLemonRicotta.avif',
+                    description: 'Waffles get a savory makeover with bright, mint-flecked ricotta and fresh tomatoes on top and grated Parm in the batter.',
+                    difficulty: '⭐⭐⭐',
+                    ingredients: `
+                        <ul>
+                            <li>1 c. whole milk</li>
+                            <li>1 large egg</li>
+                            <li>1 Tbsp. vegetable oil, plus more for brushing</li>
+                            <li>1 1/4 cups all-purpose flour</li>
+                            <li>1 Tbsp. sugar</li>
+                            <li>1 tsp. baking powder</li>
+                            <li>1/4 tsp. baking soda</li>
+                            <li>1/4 tsp. kosher salt</li>
+                            <li>1/3 c. grated Parmesan cheese</li>
+                            <h3>For Topping</h3>
+                            <li>1 1/4 c. ricotta cheese</li>
+                            <li>Milk, for thinning ricotta if needed</li>
+                            <li>1 tsp. lemon zest, plus more for serving</li>
+                            <li>3 Tbsp. small mint leaves, 1 tablespoon chopped</li>
+                            <li>Kosher salt and pepper</li>
+                            <li>1 1/2 c. grape or cherry tomatoes</li>
+                            <li>1 Tbsp. olive oil</li>
+
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Make waffles: Fit wire rack inside rimmed baking sheet and heat oven to 105°C. </li>
+                            <li>In medium bowl or measuring cup, whisk together milk, egg, and vegetable oil until smooth.</li>
+                            <li>In large bowl, whisk together flour, sugar, baking powder, baking soda, and salt; make well in center and gradually whisk in milk mixture until mostly smooth (some small lumps are OK). Fold in Parmesan.</li>
+                            <li>Adjust GH Belgian and Stuffed Waffle Maker to make thin (unstuffed) waffles and heat until green ready light turns on, about 3 minutes (or use other waffle maker and follow manufacturer’s directions).</li>
+                            <li>Lightly brush vegetable oil on upper and lower plates of waffle maker. Add 1/4 cup batter directly to center of machine (batter will spread out on its own), close lid and use handle to flip waffle maker over to other side; cook until green light reappears, 2 to 3 minutes (3 minutes for crispier waffles).</li>
+                            <li>Transfer waffle to prepared rack and keep warm in oven. Repeat with remaining batter, brushing with additional vegetable oil only if necessary.</li>
+                            <li>Meanwhile, make topping: Using electric mixer, beat ricotta on medium, adding milk if needed, until light and fluffy, 2 to 3 minutes. Mix in lemon zest and chopped mint. Taste and season with 1/8 teaspoon salt if needed.</li>
+                            <li>In medium bowl, toss tomatoes with olive oil and a pinch each of salt and pepper, then remaining 2 tablespoons mint leaves (tear into smaller pieces if large). Serve waffles topped with ricotta as well as tomato mixture and sprinkled with additional mint and lemon zest if desired.</li>
+                        </ol>`,
+                    times: '⏱️ 20 mins',
+                    yield: '5 ',
+                    nutrition: 'Calories: About 361<br>Fat: 19g<br>Cholesterol: 78mg<br>Sodium: 527mg<br>Carbohydrates: 34g<br>Sugar: 5.5g<br>Protein: 15g<br>Fiber: 1g',
+                },
+                FluffyPancakes: {
+                    title: 'Fluffy Pancakes',
+                    img: 'breakfastimg/fluffypancakes.avif',
+                    description: 'Enjoy pancakes with a pat of butter and maple syrup, or mix it up with one of our delicious flavor variations.',
+                    difficulty: '⭐⭐',
+                    ingredients: `
+                        <ul>
+                            <li>1 c. whole milk</li>
+                            <li>1 large egg</li>
+                            <li>1 Tbsp. vegetable oil</li>
+                            <li>1 c. Homemade Pancake Mix</li>
+                            <li>Kamaboko (fish loaf)</li>
+                            <li>1 Tbsp. sugar</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>In medium bowl or measuring cup, whisk together milk, egg, and oil until smooth. </li>
+                            <li>In large bowl, whisk together pancake mix and sugar; make well in center and gradually whisk in milk mixture until mostly smooth (some small lumps are OK).</li>
+                            <li>Heat large nonstick skillet or griddle on medium until drop of water sizzles. In batches, add scant 1/4-cupfuls of batter. Cook until surface is bubbly and edges are set, 2 to 3 minutes. </li>
+                            <li>With wide spatula, gently flip; cook 1 to 2 minutes. </li>
+                            <li>Serve right away or keep warm on baking sheet in 225°F oven. </li>
+                        </ol>`,
+                    times: '⏱️ 20 mins',
+                    yield: '8 servings',
+                    nutrition: 'Calories: About 300<br>Fat: 25g<br>Cholesterol: 60mg<br>Sodium: 400mg<br>Carbohydrates: 30g<br>Sugar: 7.5g<br>Protein: 15g',
+                },
+                SausageandEggSandwiches: {
+                    title: 'Sausage and Egg Sandwiches',
+                    img: 'breakfastimg/sausageandeggsandwiches.avif',
+                    description: 'Pickled peppers add a sweet-hot kick that pairs well with the rich sausage, but for a milder contrast, sub in roasted red peppers instead.',
+                    difficulty: '⭐⭐',
+                    ingredients: `
+                        <ul>
+                            <li>4 tsp. olive oil, divided</li>
+                            <li>2 thin slices red onion</li>
+                            <li>340 g sweet Italian sausage (casings removed)</li>
+                            <li>56 g extra-sharp Cheddar cheese</li>
+                            <li>4 large eggs</li>
+                            <li>4 English muffins, split and toasted</li>
+                            <li>6 sweet piquante peppers</li>
+                            <li>1/4 c. flat-leaf parsley</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>Heat 2 tsp oil in large cast-iron skillet on medium. Add onion and cook 3 minutes.</li>
+                            <li>With wet hands, shape sausage into four 1/4-inch-thick patties, add to skillet with onion, and increase heat to medium-high. Flip onion and cook until just tender, 2 to 3 minutes more.</li>
+                            <li>Cook patties until browned, 2 to 3 minutes, then flip.</li>
+                            <li>Separate onion slices into rings and arrange on top of patties, then top with Cheddar and continue cooking until sausage is cooked through, 2 to 3 minutes more.</li>
+                            <li>Meanwhile, heat remaining 2 teaspoons olive oil in large nonstick skillet on medium and cook eggs to desired doneness, 4 to 5 minutes for runny yolks.</li>
+                            <li>Top bottom halves of muffins with sausage, then eggs, pepper slices, and parsley</li>
+                        </ol>`,
+                    times: '⏱️ 15 mins',
+                    yield: '4 servings',
+                    nutrition: 'Calories: About 480<br>Fat: 29g<br>Sodium: 785mg<br>Carbohydrates: 30g<br>Sugar: 7.5g<br>Protein: 24g<br>Fiber: 2g',
+                },
+                FrenchToast: {
+                    title: 'French Toast',
+                    img: 'breakfastimg/FrenchToast.avif',
+                    description: 'Our super easy (we promise!) recipe for making French toast from scratch takes just minutes, and it means you can get a decadent and sweet breakfast on the table even on the busiest of days',
+                    difficulty: '⭐⭐',
+                    ingredients: `
+                        <ul>
+                            <li>6 large eggs</li>
+                            <li>1 1/2 c. whole milk</li>
+                            <li>1 1/2 tsp. ground cinnamon</li>
+                            <li>1 1/2 tsp. pure vanilla extract</li>
+                            <li>8 1-inch-thick slices challah bread</li>
+                            <li>4 Tbsp. unsalted butter</li>
+                            <li>Yogurt, berries, and pure maple syrup or honey, for serving</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>In large, shallow bowl, whisk together eggs, milk, cinnamon, and vanilla.</li>
+                            <li>Working in batches, place 2 bread slices in egg mixture and let soak 2 minutes. Flip and soak 1 minute more (both sides of bread should be totally coated in mixture).</li>
+                            <li>Meanwhile, heat 1 tablespoon butter in large nonstick skillet on medium-low.</li>
+                            <li>Once melted, add soaked bread and cook until golden brown, 1 to 3 minutes per side; transfer to wire rack. While toast is cooking, soak next batch of challah slices.</li>
+                            <li>Repeat with remaining butter and bread. Serve topped with yogurt, berries, and syrup or honey if desired.</li>
+                        </ol>`,
+                    times: '⏱️ 25 mins',
+                    yield: '4 servings',
+                    nutrition: 'Calories: About 229<br>Fat: 11g<br>Cholesterol: 116mg<br>Sodium: 479mg<br>Carbohydrates: 25g<br>Sugar: 3.5g<br>Protein: 8g<br>',
+                },
+                GreekYogurtPancakes: {
+                    title: 'Greek Yogurt Pancakes',
+                    img: 'breakfastimg/greekyogurtpancakes.avif',
+                    description: 'Add a protein boost to your favorite breakfast with these fluffy Greek Yogurt Pancakes. Stacked high and piled with fresh fruit, it’s a nourishing breakfast or weekend brunch recipe that tastes like a total treat.',
+                    difficulty: '⭐⭐⭐',
+                    ingredients: `
+                        <ul>
+                            <li>1/2 c. vanilla Greek yogurt</li>
+                            <li>1/3 c. milk</li>
+                            <li>2 large eggs</li>
+                            <li>2 Tbsp. maple syrup</li>
+                            <li>1 tsp. pure vanilla extract</li>
+                            <li>1 c. all-purpose flour</li>
+                            <li>3/4 tsp. baking soda</li>
+                            <li>1/2 tsp. baking powder</li>
+                            <li>1/4 tsp. kosher salt</li>
+                            <li>Yogurt, strawberries, blueberries and syrup, for serving</li>
+                        </ul>`,
+                    steps: `
+                        <ol>
+                            <li>In a large bowl, whisk together yogurt, milk, eggs, syrup, and vanilla.</li>
+                            <li>In a second bowl, whisk together flour, baking soda, baking powder, and salt.</li>
+                            <li>Add flour mixture to yogurt mixture and mix to combine.</li>
+                            <li>Heat a large nonstick skillet on medium.</li>
+                            <li>Spoon in enough batter to make 3 to 4 medium pancakes (about 2 tablespoons each) or many smaller ones (about 1 tablespoon each) and cook pancakes until bubbles begin to appear around edges and in centers.</li>
+                            <li>Using a spatula, peek under the pancakes to check that they are golden brown, then carefully flip.</li>
+                            <li>Cook about 1 minute more depending on size. Transfer to wire rack and cover loosely with foil to keep warm or serve immediately, topped with yogurt, strawberries, blueberries and syrup.</li>
+                        </ol>`,
+                    times: '⏱️ 25 mins',
+                    yield: '4 servings',
+                    nutrition: 'Calories: About 225<br>Fat: 4g<br>Fiber: 1g<br>Sodium: 480mg<br>Carbohydrates: 36g<br>Sugar: 3.5g<br>Protein: 9g<br>',
+                }
+            };
+
+            document.getElementById('recipe-title').innerHTML = recipes[recipe].title;
+            document.getElementById('recipe-difficulty').innerHTML = recipes[recipe].difficulty;
+            document.getElementById('recipe-img').src = recipes[recipe].img;
+            document.getElementById('recipe-description').innerHTML = recipes[recipe].description;
+            document.getElementById('recipe-ingredients').innerHTML = recipes[recipe].ingredients;
+            document.getElementById('recipe-steps').innerHTML = recipes[recipe].steps;
+            document.getElementById('recipe-time').innerHTML = recipes[recipe].times;
+            document.getElementById('recipe-serving-size').innerHTML = recipes[recipe].yield;
+            document.getElementById('recipe-nutrition').innerHTML = recipes[recipe].nutrition;
+            document.getElementById('recipe-details').style.display = 'block';
+
+            document.getElementById('recipe-details').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.onscroll = function() {
+            var scrollTopButton = document.getElementById('scroll-top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollTopButton.classList.add('show');
+            } else {
+                scrollTopButton.classList.remove('show');
+            }
+        };
+    </script>
+    
+</head>
+<body>
+        <nav>
+            <div class="main-page-logo">
+                <a href="../Main/main.html"><img src="../Meal/breakfastimg/Menu.jpeg" height="120px" width="200px" alt=""
+                        class="logo"> </a>
+                </div>
+                <ul id="menu-links">
+                    <li><a href="../Meal/breakfast.html">Breakfast 🍳</a></li>
+                    <li><a href="../Meal/lunch.html">Lunch 🍔</a></li>
+                    <li><a href="../Meal/dinner.html">Dinner 🍝</a></li>
+                </ul>
+                <a href="../Main/AboutUs.html"> <button class="nav-btn">About Us <img src="../Meal/breakfastimg/arrow-white.png"
+                            alt=""></button></a>
+                <img src="../Meal/breakfastimg/menu.webp" alt="" class="menu-icon" onclick="toggleMenu('menu-links')">
+        </nav>
+        <section id="screen">
+            <div class="screen container">
+              <div>
+                <h1>Breakfast <span></span></h1>
+                <br><br><br>
+                <h3>Whether it's a grab-and-go or a hearty breakfast to eat while reading the news, get off to a great start with our breakfast recipes and ideas.<span></span></h3>
+              </div>
+            </div>
+          </section>
+    <main>
+        <h1>Explore Your Breakfast!</h1><br>
+        <section class="recipe-grid">
+            <div class="recipe-card" onclick="showRecipe('TomatoandFetaBakedEggs')">
+                <img src="breakfastimg/TomatoandFetaBakedEggs.avif" alt="Tomato and Feta Baked Eggs">
+                <h3>Tomato and Feta Baked Eggs </h3>
+                <p>Smoky roasted tomatoes, salty feta, and sunny eggs all bake together on a single sheet pan!</p>
+                <p>Times: ⏱️ 40 mins</p>
+                <p>Dificulty: ⭐⭐⭐</p>
+
+            </div>
+            <div class="recipe-card" onclick="showRecipe('SweetPotatoBreakfastBurritos')">
+                <img src="breakfastimg/sweetpotatobreakfastburritos.avif" alt="Sweet Potato Breakfast Burritos">
+                <h3>Sweet Potato Breakfast Burritos</h3>
+                <p>Fill your freezer with these vegetarian burritos so a healthy</p>
+                <p>Times: ⏱️ 1 hr 20 mins</p>
+                <p>Dificulty: ⭐⭐⭐⭐</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('BECBreakfastBites')">
+                <img src="breakfastimg/b-e-c-breakfast-bites.avif" alt="bec breakfast bites">
+                <h3>B.E.C. Breakfast Bites</h3>
+                <p>Upgrade this A.M. classic by folding your favorite egg sandwich fillings into a homemade tortilla.</p>
+                <p>Times: ⏱️ 35 mins</p>
+                <p>Dificulty: ⭐⭐</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('ParmesanWaffleswithLemonRicotta')">
+                <img src="breakfastimg/ParmesanWaffleswithLemonRicotta.avif" alt="Parmesan Waffles with Lemon Ricotta">
+                <h3>Parmesan Waffles with Lemon Ricotta</h3>
+                <p>Give waffles a savory makeover with a dollop of creamy ricotta cheese</p>
+                <p>Times: ⏱️ 20 mins</p>
+                <p>Dificulty: ⭐⭐⭐</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('FluffyPancakes')">
+                <img src="breakfastimg/fluffypancakes.avif" alt="Fluffy Pancakes">
+                <h3>Fluffy Pancakes</h3>
+                <p>With our Homemade Mix, you’re already halfway to a stack of warm, fluffy pancake</p>
+                <p>Times: ⏱️ 20 mins</p>
+                <p>Dificulty: ⭐⭐</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('SausageandEggSandwiches')">
+                <img src="breakfastimg/sausageandeggsandwiches.avif" alt="Sausage and Egg Sandwiches">
+                <h3>Sausage and Egg Sandwiches</h3>
+                <p>This filling three-step recipe gives a spicy kick that'll have you ready to take on the day!</p>
+                <p>Times: ⏱️ 15 mins</p>
+                <p>Dificulty: ⭐⭐</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('FrenchToast')">
+                <img src="breakfastimg/FrenchToast.avif" alt="French Toast">
+                <h3>French Toast</h3>
+                <p>Whip up our best-ever French toast for a simple but rewarding start to your day.</p>
+                <p>Times: ⏱️ 25 mins </p>
+                <p>Dificulty: ⭐⭐</p>
+            </div>
+            <div class="recipe-card" onclick="showRecipe('GreekYogurtPancakes')">
+                <img src="breakfastimg/greekyogurtpancakes.avif" alt="Greek Yogurt Pancakes">
+                <h3>Greek Yogurt Pancakes</h3>
+                <p>Pancakes aren't just for weekends! Make a double batch on Saturday and freeze for a quick morning meal all week.</p>
+                <p>Times: ⏱️ 25 mins</p> 
+                <p>Dificulty: ⭐⭐⭐</p>
+            </div>
+        </section>
+        <script src="../Meal/meal.js"></script>
+        <section id="recipe-details" style="display: none;">
+            <h2 id="recipe-title"></h2>
+            <p id="recipe-difficulty"></p>
+            <img id="recipe-img" src="" alt="">
+            <p id="recipe-description"></p>
+            <div class="recipe-info">
+                <div class="info-card">
+                    <h3>Ingredients</h3>
+                    <div id="recipe-ingredients"></div>
+                </div>
+                <div class="info-card">
+                    <h3>Steps</h3>
+                    <div id="recipe-steps"></div>
+                </div>    
+                <div class="info-card">
+                    <h3>Time Needed</h3>
+                    <p id="recipe-time"></p>
+                </div>
+                <div class="info-card">
+                    <h3>Yield</h3>
+                    <p id="recipe-serving-size"></p>
+                </div>
+                <div class="info-card">
+                    <h3>Nutritional Information</h3>
+                    <p id="recipe-nutrition"></p>
+                </div>
+
+            </div>
+        </section>
+        <section id="contact">
+            <div class="contact container">
+              <div>
+                <br><br><br>
+                <h1 class="section-title">Contact info</h1>
+              </div>
+              <div class="contact-items">
+                <div class="contact-item">
+                  <div class="icon"><img src="../Meal/breakfastimg/phone.webp" /></div>
+                  <div class="contact-info">
+                    <h1>Phone</h1>
+                    <h2>05-468-8888 (Kampar)</h2>
+                    <h2>03-9086-0288 (Sungai Long)</h2>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="icon"><img src="../Meal/breakfastimg/emailnew.webp" /></div>
+                  <div class="contact-info">
+                    <h1>Email</h1>
+                    <h2>keeweichuan8@1utar.my</h2>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <div class="icon"><img src="../Meal/breakfastimg/address.png" /></div>
+                  <div class="contact-info">
+                    <h1>Address</h1>
+                    <a href="https://www.google.com/maps?q=UTAR+Kampar+Campus+Jalan+Universiti,+Bandar+Barat+31900,+Kampar,+Perak"
+                      target="_blank">
+                      <h2>UTAR Kampar Campus Jalan Universiti, Bandar Barat 31900, Kampar, Perak</h2>
+                    </a>
+                    <a href="https://www.google.com/maps?q=UTAR+Sungai+Long+Campus+Jalan+Sungai+Long,+Bandar+Sungai+Long+Cheras+43000,+Kajang,+Selangor"
+                      target="_blank">
+                      <h2>UTAR Sungai Long Campus Jalan Sungai Long, Bandar Sungai Long Cheras 43000, Kajang, Selangor</h2>
+                    </a>
+                  </div>
+                </div>
+              </div>
+        
+              <a href="https://www.google.com/maps/dir/?api=1&destination=4.3348363,101.1351317" target="_blank"
+                style="font-size: 24px;">Get Directions</a><br><br><br>
+        </section>
+        <section id="footer">
+            <div class="footer container">
+              <h2>Done by Kee Wei Chuan</h2>
+              <div class="social-icon">
+                <div class="social-item">
+                  <a href="https://www.facebook.com"><img
+                      src="https://img.icons8.com/bubbles/100/000000/facebook-new.png" /></a>
+                </div>
+                <div class="social-item">
+                  <a href="https://www.instagram.com"><img
+                      src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+                </div>
+        
+              </div>
+              <p>Copyright © 2024 Malaysia !
+            </div> All rights reserved</p>
+            </div>
+            <div id="cookieConsentBanner" class="cookie-consent-banner">
+                <div class="cookie-content">
+                    <p>We use cookies 🍪</p>
+                    <p>We use cookies to ensure you have the best browsing experience on our website. By using our site, you
+                        acknowledge that you have read and understood our hardwork.</p>
+                    <div class="cookie-buttons">
+                        <button id="accept">Accept</button>
+                        <button id="decline">Decline</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <button id="scroll-top" onclick="scrollToTop()">Back To Top</button>
+    </main>
+</body>
+</html>
