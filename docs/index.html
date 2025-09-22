@@ -10,7 +10,6 @@
     <link rel="icon" href="../logo_header/logo_white.png" type="image/x-icon">
 
     <script>
-        // Inline script to check for the cookie as early as possible
         (function() {
             var cookiesAccepted = document.cookie.split(';').some(function(item) {
                 return item.trim().startsWith('cookies_accepted=');
@@ -20,10 +19,8 @@
             }
         })();
     </script>
-
 </head>
 <body>
-    <!--starting of mainpage-->
     <div class="backgroundcolor">
         <nav>
             <a href="/docs/index.html"><img src="../Main/mainimg/Menu.jpeg" height="120px" width="220px" alt="" class="logo"></a>
@@ -37,22 +34,17 @@
                 <li><a href="../Drink/drink.html">Drink</a></li>
                 <li><a href="../festivals/festivals.html">Festivals</a></li>
             </ul>
-
             <a href="../Main/AboutUs.html"> <button class="nav-btn">About Us <img src="../Main/mainimg/arrow-white.png" alt=""></button></a>
-
             <div class="login-dropdown">
                 <img src="../logo_header/loginlogo2.png" alt="Login Icon" class="login-icon">
                 <div class="dropdown-content">
                     <a href="../login/login.html">Log In</a>
                     <a href="../accountDetails/account_details.html">Account Details</a>
-                    <!-- Trigger the logout function -->
                     <a href="#" onclick="logout(); return false;">Log Out</a>
                 </div>
             </div>
-
             <img src="../Main/mainimg/menu.png" alt="MainIcon" class="menu-icon" onclick="toggleMenu('menu-links')">
         </nav>
-
         <div class="header">
             <div class="header-content">
                 <h1><span>Food</span><br><span>Recipes</span></h1>
@@ -60,8 +52,6 @@
             </div>
             <img src="../Main/mainimg/mainbackground.jpg" alt="" class="user-img">
         </div>
-        <!--end of mainpage-->
-
         <section id="projects">
             <div class="projects container">
                 <div class="projects-header">
@@ -98,21 +88,19 @@
                             <img src="../Main/mainimg/fromcooksyoutrust.webp" alt="img">
                         </div>
                     </div>
+                </div>
             </div>
         </section>
-
         <div id="cookieConsentBanner" class="cookie-consent-banner">
             <div class="cookie-content">
                 <p>We use cookies 🍪</p>
-                <p>We use cookies to ensure you have the best browsing experience on our website. By using our site, you
-                    acknowledge that you have read and understood our hardwork.</p>
+                <p>We use cookies to ensure you have the best browsing experience on our website. By using our site, you acknowledge that you have read and understood our hardwork.</p>
                 <div class="cookie-buttons">
                     <button id="accept">Accept</button>
                     <button id="decline">Decline</button>
                 </div>
             </div>
         </div>
-
         <script src="../Main/main.js"></script>
         <script src="../logout/logout.js"></script>
     </div>
