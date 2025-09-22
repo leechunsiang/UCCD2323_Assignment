@@ -12,7 +12,7 @@
 <body>
     <div class="header-container">
         <div class="home-link">
-            <a href="../docs/index.html">
+            <a href="../index.html">
                 <img src="logo_header/homelogo.png" alt="Home" class="home-icon">
             </a>
         </div>
@@ -70,7 +70,7 @@
             let storedPassword = getCookie("password");
 
             if (email === storedEmail && password === storedPassword) {
-                window.location.href = "/docs/index.html";
+                window.location.href = "../index.html";
             } else {
                 alert("Invalid email or password!");
             }
