@@ -3,13 +3,14 @@
 <head>
     <meta charset="utf-8">
     <title>Food Recipe</title>
-    <link rel="stylesheet" href="../Main/mainstyle.css">
+    <link rel="stylesheet" href="./mainstyle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap" rel="stylesheet">
     <link rel="icon" href="../logo_header/logo_white.png" type="image/x-icon">
 
     <script>
+        // Inline script to check for the cookie as early as possible
         (function() {
             var cookiesAccepted = document.cookie.split(';').some(function(item) {
                 return item.trim().startsWith('cookies_accepted=');
@@ -19,11 +20,13 @@
             }
         })();
     </script>
+
 </head>
 <body>
+    <!--starting of mainpage-->
     <div class="backgroundcolor">
         <nav>
-            <a href="/docs/index.html"><img src="../Main/mainimg/Menu.jpeg" height="120px" width="220px" alt="" class="logo"></a>
+            <a href="index.html"><img src="./mainimg/Menu.jpeg" height="120px" width="220px" alt="" class="logo"></a>
             <ul id="menu-links">
                 <li><a href="../Meal/breakfast.html">Breakfast</a></li>
                 <li><a href="../Meal/lunch.html">Lunch</a></li>
@@ -34,24 +37,31 @@
                 <li><a href="../Drink/drink.html">Drink</a></li>
                 <li><a href="../festivals/festivals.html">Festivals</a></li>
             </ul>
-            <a href="../Main/AboutUs.html"> <button class="nav-btn">About Us <img src="../Main/mainimg/arrow-white.png" alt=""></button></a>
+
+            <a href="../docs/AboutUs.html"> <button class="nav-btn">About Us <img src="./mainimg/arrow-white.png" alt=""></button></a>
+
             <div class="login-dropdown">
                 <img src="../logo_header/loginlogo2.png" alt="Login Icon" class="login-icon">
                 <div class="dropdown-content">
                     <a href="../login/login.html">Log In</a>
                     <a href="../accountDetails/account_details.html">Account Details</a>
+                    <!-- Trigger the logout function -->
                     <a href="#" onclick="logout(); return false;">Log Out</a>
                 </div>
             </div>
-            <img src="../Main/mainimg/menu.png" alt="MainIcon" class="menu-icon" onclick="toggleMenu('menu-links')">
+
+            <img src="./mainimg/menu.png" alt="MainIcon" class="menu-icon" onclick="toggleMenu('menu-links')">
         </nav>
+
         <div class="header">
             <div class="header-content">
                 <h1><span>Food</span><br><span>Recipes</span></h1>
                 <p>Dive into our extensive collection of food recipes, <br>perfect for every meal, mood, and moment.</p>
             </div>
-            <img src="../Main/mainimg/mainbackground.jpg" alt="" class="user-img">
+            <img src="./mainimg/mainbackground.jpg" alt="" class="user-img">
         </div>
+        <!--end of mainpage-->
+
         <section id="projects">
             <div class="projects container">
                 <div class="projects-header">
@@ -65,7 +75,7 @@
                             <p>Daily cooking made simple, plus recipes for any occasion.</p>
                         </div>
                         <div class="project-img">
-                            <img src="../Main/mainimg/recipesyoulllove.webp" alt="img">
+                            <img src="./mainimg/recipesyoulllove.webp" alt="img">
                         </div>
                     </div>
                     <div class="project-item">
@@ -75,7 +85,7 @@
                             <p>Step-by-step videos and helpful tips, with an app for streamlined cooking.</p>
                         </div>
                         <div class="project-img">
-                            <img src="../Main/mainimg/easytomake.webp" alt="img">
+                            <img src="./mainimg/easytomake.webp" alt="img">
                         </div>
                     </div>
                     <div class="project-item">
@@ -85,23 +95,25 @@
                             <p>Each recipe is tested and perfected to work every time.</p>
                         </div>
                         <div class="project-img">
-                            <img src="../Main/mainimg/fromcooksyoutrust.webp" alt="img">
+                            <img src="./mainimg/fromcooksyoutrust.webp" alt="img">
                         </div>
                     </div>
-                </div>
             </div>
         </section>
+
         <div id="cookieConsentBanner" class="cookie-consent-banner">
             <div class="cookie-content">
                 <p>We use cookies 🍪</p>
-                <p>We use cookies to ensure you have the best browsing experience on our website. By using our site, you acknowledge that you have read and understood our hardwork.</p>
+                <p>We use cookies to ensure you have the best browsing experience on our website. By using our site, you
+                    acknowledge that you have read and understood our hardwork.</p>
                 <div class="cookie-buttons">
                     <button id="accept">Accept</button>
                     <button id="decline">Decline</button>
                 </div>
             </div>
         </div>
-        <script src="../Main/main.js"></script>
+
+    <script src="./main.js"></script>
         <script src="../logout/logout.js"></script>
     </div>
 </body>
